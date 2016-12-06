@@ -9,6 +9,7 @@ Vagrant.configure("2") do |config|
 
 	#config.ssh.forward_agent = true
     config.vm.synced_folder "sulu", "/shared/sulu", :nfs => { :mount_options => ["dmode=777","fmode=666"] }
+    config.vm.synced_folder "vagrant", "/shared/vagrant", :nfs => { :mount_options => ["dmode=777","fmode=666"] }
 
 	config.vm.provider :virtualbox do |vb|
 		vb.customize ["modifyvm", :id, "--memory", "2048"]
@@ -17,6 +18,6 @@ Vagrant.configure("2") do |config|
 		vb.name = "sulu-devbox"
 	end
 
-	config.vm.provision "shell", path: "scripts/provision.sh"
+	config.vm.provision "shell", path: "vagrant/provision.sh"
 
 end

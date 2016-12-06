@@ -2,6 +2,8 @@
 
 echo "Provisioning devbox"
 
+cp /shared/vagrant/user.ini /etc/php5/apache2/conf.d/user.ini
+
 # add a dir for default so we get less complaints
 mkdir -p /var/www/public
 

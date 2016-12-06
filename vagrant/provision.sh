@@ -2,7 +2,9 @@
 
 echo "Provisioning devbox"
 
-cp /shared/vagrant/user.ini /etc/php5/apache2/conf.d/user.ini
+# php ini override
+rm /etc/php5/apache2/conf.d/user.ini
+ln -s /shared/vagrant/user.ini /etc/php5/apache2/conf.d/user.ini
 
 # add a dir for default so we get less complaints
 mkdir -p /var/www/public
@@ -23,21 +25,23 @@ sudo mysql -u root --password=root -e "GRANT ALL PRIVILEGES ON suludb.* TO 'sulu
 sudo mysql -u root --password=root -e "FLUSH PRIVILEGES"
 
 # create local dir for cache and logs
-cd /
-sudo mkdir sulu_local
+sudo mkdir /sulu_local
 
-
+# To deal with https://getcomposer.org/doc/articles/troubleshooting.md#proc-open-fork-failed-errors
 /bin/dd if=/dev/zero of=/var/swap.1 bs=1M count=1024
 /sbin/mkswap /var/swap.1
 /sbin/swapon /var/swap.1
 
+# Install dependencies
 cd /shared/sulu
 composer self-update
 composer install --no-progress
 
-app/console sulu:build dev --no-interaction
+# Basic sulu data and assets
+app/console sulu:build dev --no-interaction --quiet
 app/console sulu:security:role:create admin sulu
 app/console assetic:dump
 
+# Fix permissions. TODO : Is vagrant user/group the issue?
 cd /
 sudo chmod -R 777 sulu_local

@@ -18,6 +18,8 @@ use Symfony\Component\Config\Loader\LoaderInterface;
  */
 abstract class AbstractKernel extends SuluKernel
 {
+    protected $localCachePath = '/sulu_local';
+
     /**
      * {@inheritdoc}
      */
@@ -118,14 +120,20 @@ abstract class AbstractKernel extends SuluKernel
      */
     public function getCacheDir()
     {
+        if (in_array($this->environment, array('dev', 'test'))) {
+            return $this->localCachePath . '/cache/' . $this->getContext() . '/' .  $this->environment;
+        }
         return $this->rootDir . '/cache/' . $this->getContext() . '/' . $this->environment;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getLogDir()
     {
+        if (in_array($this->environment, array('dev', 'test'))) {
+            return $this->localCachePath . '/logs' . $this->getContext() . '/' . $this->environment;
+        }
         return $this->rootDir . '/logs/' . $this->getContext() . '/' . $this->environment;
     }
 }

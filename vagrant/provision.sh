@@ -39,7 +39,7 @@ composer install --no-progress
 
 # Basic sulu data and assets
 app/console sulu:build dev --no-interaction --quiet
-app/console sulu:security:role:create admin sulu
+app/console sulu:security:role:create admin Sulu
 app/console assetic:dump
 
 # Fix permissions. TODO : Is vagrant user/group the issue?

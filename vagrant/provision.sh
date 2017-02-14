@@ -26,6 +26,8 @@ sudo mysql -u root --password=root -e "FLUSH PRIVILEGES"
 
 # create local dir for cache and logs
 sudo mkdir /sulu_local
+sudo mkdir /shared/vendor
+#sudo chmod 777 /shared/vendor
 
 # To deal with https://getcomposer.org/doc/articles/troubleshooting.md#proc-open-fork-failed-errors
 /bin/dd if=/dev/zero of=/var/swap.1 bs=1M count=1024

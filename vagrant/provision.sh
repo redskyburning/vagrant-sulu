@@ -36,8 +36,8 @@ sudo mkdir /shared/vendor
 
 # Install dependencies
 cd /shared/sulu
-composer self-update
-composer install --no-progress
+composer self-update -q
+composer install --no-progress -q
 
 # Basic sulu data and assets
 app/console sulu:build dev --no-interaction --quiet

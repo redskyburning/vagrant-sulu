@@ -25,8 +25,8 @@ sudo mysql -u root --password=root -e "GRANT ALL PRIVILEGES ON suludb.* TO 'sulu
 sudo mysql -u root --password=root -e "FLUSH PRIVILEGES"
 
 # create local dir for cache and logs
-sudo mkdir /sulu_local
-sudo chmod -R 777 /sulu_local
+sudo mkdir /shared/sulu_local
+sudo chmod -R 777 /shared/sulu_local
 
 sudo mkdir /shared/vendor
 sudo chmod -R 777 /shared/vendor

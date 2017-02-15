@@ -18,6 +18,6 @@ Vagrant.configure("2") do |config|
 		vb.name = "sulu-devbox"
 	end
 
-	config.vm.provision "shell", path: "vagrant/provision.sh"
+	config.vm.provision "shell", path: "vagrant/provision.sh", privileged: false
 
 end

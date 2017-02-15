@@ -37,9 +37,6 @@ abstract class AbstractKernel extends SuluKernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Doctrine\Bundle\DoctrineCacheBundle\DoctrineCacheBundle(),
 
-            // symfony cmf
-            new Symfony\Cmf\Bundle\CoreBundle\CmfCoreBundle(),
-
             // doctrine extensions
             new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
             new Doctrine\Bundle\PHPCRBundle\DoctrinePHPCRBundle(),
@@ -50,9 +47,6 @@ abstract class AbstractKernel extends SuluKernel
 
             // massive
             new Massive\Bundle\SearchBundle\MassiveSearchBundle(),
-
-            // php-task
-            new Task\TaskBundle\TaskBundle(),
 
             // sulu
             new Sulu\Bundle\SearchBundle\SuluSearchBundle(),
@@ -74,7 +68,6 @@ abstract class AbstractKernel extends SuluKernel
             new Sulu\Bundle\CustomUrlBundle\SuluCustomUrlBundle(),
             new Sulu\Bundle\RouteBundle\SuluRouteBundle(),
             new Sulu\Bundle\MarkupBundle\SuluMarkupBundle(),
-            new Sulu\Bundle\AutomationBundle\SuluAutomationBundle(),
             new DTL\Bundle\PhpcrMigrations\PhpcrMigrationsBundle(),
             new Dubture\FFmpegBundle\DubtureFFmpegBundle(),
 

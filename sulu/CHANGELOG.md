@@ -1,6 +1,96 @@
 CHANGELOG for Sulu CMF
 ======================
 
+* 1.5.0-RC1 (2017-02-13)
+    * ENHANCEMENT #788  [SULU-STANDARD]         Updated example template
+    * ENHANCEMENT #779  [SULU-STANDARD]         Removed exception-controller from config
+    * ENHANCEMENT #771  [SULU-STANDARD]         Removed generator-bundle
+    * BUGFIX      #773  [SULU-STANDARD]         Removed acl configuration
+    * BUGFIX      #3022 [ContentBundle]       Fixed property-value offset set
+    * ENHANCEMENT #3190 [ContentBundle]       Extracted automation handler
+    * ENHANCEMENT #3188 [AutomationBundle]    Extracted the automation-bundle
+    * BUGFIX      #3183 [ContentBundle]       Fixed grid usage in conten form
+    * BUGFIX      #3186 [Cache]               Fixed wrong cache key generation for MemoizeTwigExtensionTrait
+    * ENHANCMENT  #3182 [SecurityBundle]      Added unique constraint for permission context and role
+    * ENHANCEMENT #3179 [All]                 Added exception throw when field descriptor reference is not found
+    * BUGFIX      #3040 [MediaBundle]         Throw exception when multiple formats have the same key
+    * BUGFIX      #3180 [AutomationBundle]    Remove the automation tab from ghost page forms
+    * FEATURE     #3164 [AdminBundle]         Extracted csv-export into extension
+    * BUGFIX      #3158 [WebsiteBundle]       Fixed error where URL displayed in exception is missing
+    * BUGFIX      #3149 [ContentBundle]       Fixed cache clearing on publishing
+    * BUGFIX      #3141 [All]                 Fixed doctrine list builder id when name is not id
+    * ENHANCEMENT #3146 [TestBundle]          SuluTestCase: Adopted initPhpcr to work for all kernels
+    * ENHANCEMENT #3147 [All]                 Updated minimum "phpspec/prophecy" version
+    * ENHANCEMENT #3142 [CoreBundle]          Added a script handler to delete the composer.lock file from gitignore
+    * FEATURE     #3042 [ContentBundle]       Added versioning functionality
+    * ENHANCEMENT #3126 [All]                 Fixed deprecations to be compatible to twig2
+    * FEATURE     #3113 [ContentBundle]       Added authored/author field to pages
+    * ENHANCEMENT #3094 [MarkupBundle]        Extracted tag-extractor from html-markup-parser
+    * BUGFIX      #3111 [LocationBundle]      Fixed coordinates update for google map provider
+    * ENHANCEMENT #3110 [WebsiteBundle]       Fixed deprecation of flatten-exception by decorating twig-exception-controller
+    * BUGFIX      #3109 [SnippetBundle]       Added publish snippet after copy locale
+    * FEATURE     #3107 [All]                 Added storage-name to list components
+    * BUGFIX      #3098 [AdminBundle]         Fixed typo in english translation
+    * ENHANCEMENT #3097 [All]                 Updated dependencies
+    * BUGFIX      #3095 [ContentBundle]       Fixed sort-by for data-provider
+    * BUGFIX      #3092 [ContentBundle]       Fixed api if structure-type was removed or is not valid
+    * ENHANCEMENT #3084 [GeneratorBundle]     Removed generator-bundle
+    * ENHANCEMENT #3080 [All]                 Removed getRequest calls
+    * ENHANCENEMT #3070 [All]                 Removed guzzle3 dependency
+    * FEATURE     #3078 [MediaBundle]         Added sort-by title for media-dataprovider
+    * FEATURE     #3069 [PreviewBundle]       Added cache configuration for preview & websocket context
+    * ENHANCEMENT #3071 [All]                 Updated willdurand/hateoas-bundle
+    * ENHANCEMENT #3072 [SnippetBundle]       Fixed deprecations for symfony 3.0
+    * ENHANCEMENT #3072 [AdminBundle]         Fixed deprecations for symfony 3.0
+    * FEATURE     #3066 [AutomationBundle]    Added notification-badge to automation-tab
+    * ENHANCEMENT #3059 [ContentBundle]       Fixed deprecation in WebspaceCollection rendering
+    * ENHANCEMENT #3058 [All]                 Fixed some config files for symfony3
+    * BUGFIX      #3043 [ContentBundle]       Fixed bind null values on managed-structure
+    * FEATURE     #3037 [AutomationBundle]    Added automation-bundle
+    * BUGFIX      #3052 [ContentBundle]       Fixed loading tree (with uuid) without webspace
+    * ENHANCEMENT #3067 [ContentBundle]       Removed symfony-acl-voter
+    * ENHANCEMENT #3068 [CoreBundle]          Removed phpcr-odm
+    * ENHANCEMENT #2856 [ContactBundle]       Removed not needed css
+    * BUGFIX      #3034 [LocationBundle]      Load external map data over https
+    * BUGFIX      #3031 [AdminBundle]         Fixed defaultDisplayOption in media selectio content type
+    * BUGFIX      #3075 [ContentComponent]    Fixed missing referenced UUIDs for contentTypes nested in a block
+    * ENHANCEMENT #1686 [SnippetBundle]       Added XLIFF-Import/Export for Snippet-Documents.
+
+* 1.4.7 (2017-02-13)
+    * HOTFIX      #3195 [MediaBundle]           Fixed media linking in texteditor overlay
+    * BUGFIX      #3186 [Cache]                 Fixed wrong cache key generation for MemoizeTwigExtensionTrait
+
+* 1.4.6 (2017-02-03)
+    * HOTFIX      #3177 [WebsiteBundle]         Fixed wrong hreflang tag
+    * HOTFIX      #3173 [ContentBundle]         Fixed generating of resource locator with missing parents
+    * HOTFIX      #3170 [ContentBundle]         Fixed copy page in column navigation
+    * BUGFIX      #3168 [WebsiteBundle]         Fixed hide internal/external link in sitemap
+    * HOTFIX      #3170 [ContentBundle]         Fixed deleting of the smart content data source
+    * BUGFIX      #3167 [SnippetBundle]         Fixed error when snippet template has a category field
+    * HOTFIX      #3162 [MediaBundle]           Fixed type filtering in media-selection
+    * HOTFIX      #3150 [HTTPCacheBundle]       Fixed invalidate cache for https
+
+* 1.4.5 (2016-01-16)
+    * BUGFIX      #3043 [ContentBudle]        Fixed bind null values on managed-structure
+
+* 1.4.4 (2016-01-12)
+    * HOTFIX      #3140 [MediaBundle]           Use https variant of adobe creative image editor
+    * HOTFIX      #3139 [MediaBundle]           Fixed scaling issues on crop overlay in page form
+    * HOTFIX      #3138 [MediaBundle]           Fixed cropping with only one given side
+    * HOTFIX      #3134 [MediaBundle]           Fixed default focus point to center
+    * HOTFIX      #3130 [ContentBundle]         Fixed moving of blocks without maxOccurs
+    * HOTFIX      #3131 [WebsiteBundle]         Fixed sulu_content_path for language-specific domains
+    * HOTFIX      #3127 [ContentBundle]         Fixed copy-locale for homepage
+
+* 1.4.3 (2016-12-21)
+    * HOTFIX      #3108 [ContentBundle]         Fixed support for multiple properties with minOccurs of 1
+    * HOTFIX      #3099 [ContentBundle]         Display draft internal link in test mode
+    * HOTFIX      #3091 [SecurityBundle]        Increased length of context field
+    * HOTFIX      #3090 [MediaBundle]           Fixed extension when purging media
+    * HOTFIX      #3087 [AdminBundle]           Fixed search with umlauts in text editor
+    * ENHANCEMENT #3085 [DocumentManager]       Fixed document-manager constraint
+    * HOTFIX      #3065 [ContentBundle]         Fixed double '&' in column-navigation url
+
 * 1.4.2 (2016-11-24)
     * HOTFIX      #3032 [ContentBundle]         Fixed publishing for shadow page targeting drafts
     * BUGFIX      #3035 [DocumentManagerBundle] Fixed bug for save if route already exists empty
@@ -122,6 +212,16 @@ CHANGELOG for Sulu CMF
     * BUGFIX      #751 [SULU-STANDARD]        Fixed category access in default twig template
     * ENAHCNEMENT #745 [SULU-STANDARD]        Added title to header image format and made use of 640x480 format
     * ENAHCNEMENT #738 [SULU-STANDARD]        Refactored the image-formats of the default theme to meet new image-formats version
+
+* 1.3.6 (2017-01-10)
+    * HOTFIX      #3128 [All]                 Bumped twig version to ^1.11
+
+* 1.3.5 (2016-11-24)
+    * HOTFIX      #3033 [SnippetBundle]       Handle references to deleted snippets in snippet selection
+    * HOTFIX      #3032 [ContentBundle]       Fixed publishing for shadow page targeting drafts
+
+* 1.3.4 (2016-11-14)
+    * HOTFIX      #3025 [ContentBundle]       Fixed null value for text-editor
 
 * 1.3.3 (2016-11-10)
     * HOTFIX      #760 [SULU-STANDARD]       Deactivate public in dev/stage environment

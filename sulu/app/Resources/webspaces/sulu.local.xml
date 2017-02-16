@@ -11,7 +11,7 @@
         <localization language="de"/>
     </localizations>
 
-    <theme>default</theme>
+    <theme>test</theme>
 
     <default-templates>
         <default-template type="page">default</default-template>

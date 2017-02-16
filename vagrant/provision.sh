@@ -31,8 +31,9 @@ sudo chmod -R 777 /shared/sulu_local
 sudo mkdir /shared/vendor
 sudo chmod -R 777 /shared/vendor
 
+# Create swap file
 # To deal with https://getcomposer.org/doc/articles/troubleshooting.md#proc-open-fork-failed-errors
-sudo /bin/dd if=/dev/zero of=/var/swap.1 bs=1M count=1024
+sudo /bin/dd if=/dev/zero of=/var/swap.1 bs=1M count=2048
 sudo /sbin/mkswap /var/swap.1
 sudo /sbin/swapon /var/swap.1
 

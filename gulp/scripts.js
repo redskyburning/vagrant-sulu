@@ -18,13 +18,12 @@ gulp.task('scripts:reload', ['scripts'], function () {
 });
 
 gulp.task('scripts:vendor', [], function () {
-	let jsFilter = $.filter('**/*.js', {restore : true});
+	let jsFilter = $.filter('**/*.js');
 
 	return gulp.src('./bower.json')
 		.pipe($.mainBowerFiles())
 		.pipe(jsFilter)
 		.pipe($.concat('vendor.js'))
-		.pipe(jsFilter.restore)
 		.pipe(gulp.dest(conf.paths.scriptOutput));
 });
 

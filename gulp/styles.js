@@ -14,6 +14,8 @@ gulp.task('styles', ['styles:vendor'], function () {
 
 	return gulp.src([path.join(conf.paths.styleSrc, '**/root.scss')])
 		.pipe($.sass(sassOptions)).on('error', conf.errorHandler('Sass'))
+		.pipe($.autoprefixer()).on('error', conf.errorHandler('Autoprefixer'))
+		.pipe($.rename('app.css'))
 		.pipe(gulp.dest(conf.paths.styleOutput))
 });
 
@@ -22,15 +24,13 @@ gulp.task('styles:reload', ['styles'], function () {
 });
 
 gulp.task('styles:vendor', [], function () {
-	let cssFilter = $.filter('**/*.css', {restore : true});
-	let jsFilter = $.filter('**/*.js', {restore : true});
+	let cssFilter = $.filter('**/*.css');
 
 	return gulp.src('./bower.json')
 		.pipe($.mainBowerFiles())
-		.pipe($.debug())
 		.pipe(cssFilter)
+		.pipe($.debug())
 		.pipe($.concat('css/vendor.css'))
-		.pipe(cssFilter.restore)
 		.pipe(gulp.dest(conf.paths.styleOutput));
 
 });

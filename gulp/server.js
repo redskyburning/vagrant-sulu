@@ -10,7 +10,7 @@ function browserSyncInit() {
     browserSync.instance = browserSync.init({
 		host      : 'sulu.dev',
 		open 	  : 'external',
-        proxy	  : "sulu.local" // makes a proxy for localhost:8080
+        proxy	  : 'sulu.local'
     });
 }
 

@@ -13,10 +13,12 @@ let bundlePath = 'sulu/src/Client/Bundle/WebsiteBundle';
 let publicPath = path.join(bundlePath, 'Resources/public/default');
 
 exports.paths = {
-	public     : publicPath,
-	themes     : path.join(bundlePath,'Resources/themes'),
-	styleSrc   : path.join(publicPath, 'scss'),
-	styleOutput: path.join(publicPath, 'css'),
+	public       : publicPath,
+	themes       : path.join(bundlePath, 'Resources/themes'),
+	styleSrc     : path.join(publicPath, 'scss'),
+	styleOutput  : path.join(publicPath, 'css'),
+	scriptSrc    : path.join(publicPath, 'jsSrc'),
+	scriptOutput : path.join(publicPath, 'js')
 };
 
 /**

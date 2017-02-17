@@ -24,6 +24,10 @@ Symfony and Vagrant don't play well together out of the box. Because Symfony has
 
 When requiring a new composer dependency, first ssh in to the VM using `vagrant ssh`, then `cd /shared/sulu` to get to the shared sulu dir and run `composer require X` from there. The composer.json will be synced back onto the host machine and tracked in git, while the libraries themselves will be installed to the VM's `/shared/vendor` dir. It's not really shared, the name is misleading here. Afterwards you can return to the host's sulu dir and run `composer install --no-scripts` to update your local version of the dependencies.
 
+## Browsersync and the VM
+
+You may have noticed that this project uses Vagrant and Browsersync, which means we have two servers with two domains. I know that's kinda weird, but there's a good reason. sulu.local is the domain for our vm, where the main symfony app executes. Symfony does a lot of things very well, but working with css and js isn't really one of them. Symfony typically uses Assetic for asset management, which works well enough, but lacks the speed and flexibility of Gulp and doesn't work very well with Bower. To get live reloading into the mix as well we have to add Browsersync on top of gulp, which is where we get our second server. The browsersync server doesn't do much, it just acts as a proxy to the vm and inserts code for live reloading. 
+
 ## Working with frontend assets and gulp
 
 Gulp

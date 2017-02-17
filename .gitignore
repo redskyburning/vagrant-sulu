@@ -4,3 +4,4 @@ vendor
 composer.lock
 sulu_local
 node_modules
+bower_components

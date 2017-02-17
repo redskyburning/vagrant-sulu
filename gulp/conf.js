@@ -7,21 +7,26 @@
  */
 
 let gutil = require('gulp-util');
+let path  = require('path');
+
+let bundlePath = 'sulu/src/Client/Bundle/WebsiteBundle';
+let publicPath = path.join(bundlePath, 'Resources/public/default');
 
 exports.paths = {
-    public : 'sulu/src/Client/Bundle/WebsiteBundle/Resources/public/default',
-    styleSrc : 'scss',
-    styleOutput : 'css'
+	public     : publicPath,
+	themes     : path.join(bundlePath,'Resources/themes'),
+	styleSrc   : path.join(publicPath, 'scss'),
+	styleOutput: path.join(publicPath, 'css'),
 };
 
 /**
  *  Common implementation for an error handler of a Gulp plugin
  */
-exports.errorHandler = function(title) {
-    'use strict';
+exports.errorHandler = function (title) {
+	'use strict';
 
-    return function(err) {
-        gutil.log(gutil.colors.red('[' + title + ']'), err.toString());
-        this.emit('end');
-    };
+	return function (err) {
+		gutil.log(gutil.colors.red('[' + title + ']'), err.toString());
+		this.emit('end');
+	};
 };

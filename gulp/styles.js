@@ -11,8 +11,8 @@ gulp.task('styles', function () {
         precision: 10
     };
 
-    return gulp.src([path.join(conf.paths.public,conf.paths.styleSrc,'**/root.scss')])
+    return gulp.src([path.join(conf.paths.styleSrc,'**/root.scss')])
         .pipe($.debug())
         .pipe($.sass(sassOptions)).on('error', conf.errorHandler('Sass'))
-        .pipe(gulp.dest(path.join(conf.paths.public,conf.paths.styleOutput)))
+        .pipe(gulp.dest(conf.paths.styleOutput))
 });

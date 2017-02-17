@@ -1,0 +1,8 @@
+// This file manages the interaction between vendor scss, overrides and app scss.
+// Don't put styles here, imports only.
+
+// Override allows us to override base bootstrap variables.
+@import "bootstrap-override";
+// This path is a dirty hack. TODO : Better.
+@import "../../../../../../../../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap";
+@import "app";

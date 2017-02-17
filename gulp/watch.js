@@ -16,7 +16,7 @@ gulp.task('reload', [], function () {
 });
 
 gulp.task('watch', [], function () {
-	console.log(path.join(conf.paths.themes, '**/*.html'));
+	console.log(path.join(conf.paths.themes, '**/*.html.twig'));
 	gulp.watch([path.join(conf.paths.themes, '**/*.html')], ['reload']);
 	gulp.watch([path.join(conf.paths.styleSrc, '**/*.scss')], ['styles:reload']);
 });

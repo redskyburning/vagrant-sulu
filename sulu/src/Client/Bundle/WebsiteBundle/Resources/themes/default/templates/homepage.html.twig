@@ -1,0 +1,13 @@
+{% extends "ClientWebsiteBundle:views:master.html.twig" %}
+
+{% block meta %}{% include "ClientWebsiteBundle:blocks:meta.html.twig" %}{% endblock %}
+
+{% block content %}
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Welcome to Vagrant-Sulu!</h1>
+            <p>An experimental <a href="sulu.io">Sulu</a> seed project using <a href="#">Vagrant</a> and <a href="#">Gulp</a></p>
+            <p><a class="btn btn-primary" href="/admin" role="button">Admin Access</a></p>
+        </div>
+    </div>
+{% endblock %}

@@ -2,7 +2,7 @@
 
 A working (I swear!) example of [Sulu](http://sulu.io) running on a Vagrant VM.
 
-## Installation
+## Primary Installation
 
 * Install composer https://getcomposer.org
 * Install vagrant and virtualbox
@@ -12,11 +12,17 @@ A working (I swear!) example of [Sulu](http://sulu.io) running on a Vagrant VM.
 * add `192.168.33.66 sulu.local` to `/etc/hosts` for the VM.
 * add `127.0.0.1 sulu.dev` to `/etc/hosts` for the browsersync proxy.
 * `vagrant up` to spin up the vm and install dependencies.
+* You should now have a working sulu install at [http://sulu.local](http://sulu.local) . Access the admin at [http://sulu.local/admin/login](http://sulu.local/admin/login) with login admin / admin.
+
+#### Local Composer Installation (Optional)
 * `cd sulu && composer install --no-scripts` locally to install dependencies. This is optional and the files will not be synced to the vm, but it's helpful for IDE autocompletion.
+
+## Frontend Dev Installation (Optional)
+
 * Run `node -v` to see if you have a current version of node. You should have version 4+.
-* Run `npm install` in the project root on the host.
+* Run `npm install -g gulp bower` to install Gulp and Bower.
+* Run `npm install && bower install` in the project root on the host.
 * If you want to work on the frontend run `gulp serve` to spin up the browsersync proxy and related gulp watchers. A window should open automatically with the site.
-* Have a look at [http://sulu.local](http://sulu.local) . Access the admin at [http://sulu.local/admin/login](http://sulu.local/admin/login) with login admin / admin
 
 ## Working with the VM and Composer
 

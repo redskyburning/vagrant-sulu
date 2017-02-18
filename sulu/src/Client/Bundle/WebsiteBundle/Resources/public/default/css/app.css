@@ -7687,3 +7687,7 @@ button.close {
     display: none !important;
   }
 }
+
+.site__navbar {
+  margin-bottom: 0;
+}

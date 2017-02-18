@@ -26,7 +26,8 @@
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -35,26 +36,32 @@
                 <a class="navbar-brand" href="#">Vagrant-Sulu</a>
             </div>
 
-                <form class="navbar-form navbar-right" action="{{ path('sulu_search.website_search') }}" method="GET">
-                    <div class="form-group">
-                        <label class="sr-only" for="exampleInputAmount">Search</label>
-                        <div class="input-group">
-                            <input type="text" class="form-control" id="exampleInputAmount" placeholder="Search">
-                            <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">Go!</button>
-                              </span>
-                        </div>
-                    </div>
-                </form>
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Language <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        {% for locale, url in urls %}
+                            <li>
+                                <a href="{{ sulu_content_path((url?:'/'),request.webspaceKey,locale) }}">{{ locale }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            </ul>
 
-                <div class="btn-group navbar-right" role="group" aria-label="...">
-                    {% for locale, url in urls %}
-                        <a class="btn btn-default navbar-btn"
-                           href="{{ sulu_content_path((url?:'/'),request.webspaceKey,locale) }}">{{ locale }}</a>
-                    {% endfor %}
+            <form class="navbar-form navbar-right" action="{{ path('sulu_search.website_search') }}" method="GET">
+                <div class="form-group">
+                    <label class="sr-only" for="exampleInputAmount">Search</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="exampleInputAmount" placeholder="Search">
+                        <span class="input-group-btn">
+                                <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                              </span>
+                    </div>
                 </div>
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
+            </form>
+        </div><!-- /.navbar-collapse -->
     </nav>
 
     {% include 'ClientWebsiteBundle:views:navigation.html.twig' %}

@@ -1,1 +1,8 @@
-// Project-level vars
+// Project-level custom vars.
+// To override bootstrap variables use override.scss.
+// Bootstrap base vars in _variables.scss in bower_components
+$black:#333;
+
+$site-padding:15px;
+$site-gutter:$site-padding * 2;
+$site-border:1px solid $gray-light;

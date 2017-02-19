@@ -1,5 +1,20 @@
 .site {
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+
   &__navbar {
     margin-bottom:0;
+  }
+
+  &__content {
+    flex:1 1 auto;
+  }
+
+  &__footer {
+    background:$gray-lighter;
+    padding:$site-gutter 0;
+    margin-top:$site-gutter;
+    border-top:$site-gutter;
   }
 }

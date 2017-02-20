@@ -7734,3 +7734,29 @@ button.close {
           justify-content: flex-end;
   text-transform: capitalize;
 }
+
+.template-event__header {
+  min-height: 35vw;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  text-transform: capitalize;
+}
+
+.template-event__map {
+  float: left;
+  width: 300px;
+  height: 300px;
+  margin: 0 15px 15px 0;
+}

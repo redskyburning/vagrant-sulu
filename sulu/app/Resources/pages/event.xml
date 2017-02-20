@@ -10,7 +10,7 @@
     <cacheLifetime>2400</cacheLifetime>
 
     <meta>
-        <title lang="de">Übersicht</title>
+        <title lang="de">Event</title>
         <title lang="en">Event</title>
     </meta>
 
@@ -40,30 +40,59 @@
             </properties>
         </section>
 
-        <property name="smartcontent" type="smart_content">
+        <property name="headerimage" type="media_selection">
+            <tag name="sulu.search.field" role="image" index="false"/>
             <meta>
-                <title lang="de">Smart-Content</title>
-                <title lang="en">Smart-Content</title>
-            </meta>
-
-            <params>
-                <param name="max_per_page" value="5"/>
-
-                <param name="properties" type="collection">
-                    <param name="title" value="title"/>
-                    <param name="article" value="article"/>
-                    <param name="ext_title" value="excerpt.title"/>
-                    <param name="ext_tags" value="excerpt.tags"/>
-                    <param name="ext_images" value="excerpt.images"/>
-                </param>
-            </params>
-        </property>
-
-        <property name="article" type="text_editor">
-            <meta>
-                <title lang="de">Artikel</title>
-                <title lang="en">Article</title>
+                <title lang="de">Headerbild</title>
+                <title lang="en">Header image</title>
             </meta>
         </property>
+
+        <property name="eventDate" type="date">
+            <meta>
+                <title lang="de">Event Date</title>
+                <title lang="en">Event Date</title>
+            </meta>
+        </property>
+
+        <property name="eventTime" type="time">
+            <meta>
+                <title lang="en">Event Time</title>
+            </meta>
+        </property>
+
+        <property name="location" type="location">
+            <meta>
+                <title lang="en">Location</title>
+            </meta>
+        </property>
+
+        <section name="content">
+            <meta>
+                <title lang="de">Inhalt</title>
+                <title lang="en">Content</title>
+
+                <info_text lang="de">Bereich für den Inhalt</info_text>
+                <info_text lang="en">Content Section</info_text>
+            </meta>
+            <properties>
+                <property name="article" type="text_editor">
+                    <meta>
+                        <title lang="de">Artikel</title>
+                        <title lang="en">Article</title>
+                    </meta>
+
+                    <params>
+                        <param name="link" value="true"/>
+                        <param name="table" value="true"/>
+                        <param name="height" value="100"/>
+                        <param name="max_height" value="500"/>
+                        <param name="paste_from_word" value="true"/>
+                        <param name="extra_allowed_content"
+                               value="img(*)[*]; span(*)[*]; div(*)[*]; iframe(*)[*]; script(*)[*]"/>
+                    </params>
+                </property>
+            </properties>
+        </section>
     </properties>
 </template>

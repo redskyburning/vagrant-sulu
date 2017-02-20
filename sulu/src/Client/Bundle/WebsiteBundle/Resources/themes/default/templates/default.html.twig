@@ -5,7 +5,9 @@
 {% block content %}
     <div class="template-default">
         <div class="template-default__header jumbotron"
-             style="background-image:url('{{ content.headerimage[0].thumbnails['640x480'] }}')">
+             {% if content.headerimage[0].thumbnails['1200x675'] %}
+                style="background-image:url('{{ content.headerimage[0].thumbnails['1200x675'] }}')"
+             {% endif %}>
             <div class="container">
                 <h1 property="title">{{ content.title }}</h1>
             </div>

@@ -11,6 +11,24 @@
         </meta>
         <scale x="1200" y="675"/>
     </format>
+    <format key="600x400">
+        <meta>
+            <title lang="en">Mobile Header Image</title>
+            <title lang="de">Headerbild</title>
+            <title lang="fr">Image l'en-tête</title>
+            <title lang="nl">Header afbeelding</title>
+        </meta>
+        <scale x="1200" y="675"/>
+    </format>
+    <format key="200x200">
+        <meta>
+            <title lang="en">Large thumbnail</title>
+            <title lang="de">Kleines Thumbnail</title>
+            <title lang="fr">Image miniature</title>
+            <title lang="nl">Kleine thumbnail</title>
+        </meta>
+        <scale x="50" y="50"/>
+    </format>
     <format key="50x50">
         <meta>
             <title lang="en">Small thumbnail</title>

@@ -20,6 +20,8 @@ sudo service apache2 restart
 
 # make db
 echo "Creating sulu DB"
+# The following line makes 'vagrant provision' very destructive. Optional, use with care.
+sudo mysql -u root --password=root -e "DROP DATABASE IF EXISTS suludb"
 sudo mysql -u root --password=root -e "CREATE DATABASE IF NOT EXISTS suludb"
 sudo mysql -u root --password=root -e "GRANT ALL PRIVILEGES ON suludb.* TO 'suluuser'@'localhost' IDENTIFIED BY 'password'"
 sudo mysql -u root --password=root -e "FLUSH PRIVILEGES"

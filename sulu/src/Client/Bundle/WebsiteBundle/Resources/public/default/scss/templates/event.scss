@@ -1,0 +1,21 @@
+.template-event {
+  &__header {
+    min-height:35vw;
+    background-repeat: no-repeat;
+    background-position:center top;
+    background-size:cover;
+    color:$white;
+    display:flex;
+    flex-direction:column;
+    justify-content: flex-end;
+    text-transform: capitalize;
+  }
+
+  &__map {
+    $map-size:300px;
+    float:left;
+    width:$map-size;
+    height:$map-size;
+    margin:0 $site-padding $site-padding 0;
+  }
+}

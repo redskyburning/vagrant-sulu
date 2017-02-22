@@ -15,7 +15,7 @@
 
     <default-templates>
         <default-template type="page">default</default-template>
-        <default-template type="homepage">overview</default-template>
+        <default-template type="homepage">homepage</default-template>
     </default-templates>
 
     <templates>

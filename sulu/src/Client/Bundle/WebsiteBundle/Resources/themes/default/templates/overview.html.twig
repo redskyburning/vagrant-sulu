@@ -3,7 +3,7 @@
 {% block meta %}{% include "ClientWebsiteBundle:blocks:meta.html.twig" %}{% endblock %}
 
 {% block content %}
-    <div id="content" vocab="http://schema.org/" typeof="Content">
+    <div class="container" id="content" vocab="http://schema.org/" typeof="Content">
 
         <div class="row">
             <div class="col-lg-12">
@@ -19,8 +19,15 @@
                 <h2>Smart-Content</h2>
             </div>
 
+            {{ dump(view.smartcontent) }}
+
             <div class="col-lg-6">
-                {% include "ClientWebsiteBundle:util:categories.html.twig" with {locale: request.locale, withChildren: true, root: view.smartcontent.categoryRoot, parameter: view.smartcontent.categoriesParameter} %}
+                {% include "ClientWebsiteBundle:util:categories.html.twig" with {
+                    locale: request.locale,
+                    withChildren: true,
+                    root: view.smartcontent.categoryRoot,
+                    parameter: view.smartcontent.categoriesParameter
+                } %}
             </div>
             <div class="col-lg-6">
                 {% include "ClientWebsiteBundle:util:tags.html.twig" with {parameter: view.smartcontent.tagsParameter} %}

@@ -18,7 +18,7 @@ gulp.task('reload:delayed', [], function () {
 	// Yup, that's a cheap hack, but i don't see a better way to allow symfony time to process the change.
 	setTimeout(() => {
 		browserSync.reload();
-	},100);
+	},150);
 });
 
 gulp.task('watch', ['styles:watch'], function () {

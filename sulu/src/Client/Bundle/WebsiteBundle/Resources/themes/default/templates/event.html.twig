@@ -1,0 +1,31 @@
+{% extends "ClientWebsiteBundle:views:master.html.twig" %}
+
+{% block meta %}{% include "ClientWebsiteBundle:blocks:meta.html.twig" %}{% endblock %}
+
+{% block content %}
+    <div class="template-event">
+        <div class="template-event__header jumbotron"
+                {% if content.headerimage[0].thumbnails['1200x675'] %}
+            style="background-image:url('{{ content.headerimage[0].thumbnails['1200x675'] }}')"
+                {% endif %}>
+            <div class="container">
+                <h1 property="title">{{ content.title }}</h1>
+            </div>
+        </div>
+        <div class="template-event__body container">
+
+            <iframe class="template-event__map"
+                    width="600"
+                    height="600"
+                    frameborder="0" style="border:0"
+                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA1erPgt6kDzzUZF8BmbFyxft3iDFgTPgU
+                    &q={{ content.location.street|escape('url') }}+{{ content.location.number|escape('url') }},{{ content.location.code }}&zoom={{ content.location.zoom }}" allowfullscreen>
+            </iframe>
+
+
+            {% autoescape false %}
+                <div class="template-event__content" property="article">{{ content.article }}</div>
+            {% endautoescape %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,13 @@
+.template-default {
+  &__header {
+    min-height:35vw;
+    background-repeat: no-repeat;
+    background-position:center top;
+    background-size:cover;
+    color:$white;
+    display:flex;
+    flex-direction:column;
+    justify-content: flex-end;
+    text-transform: capitalize;
+  }
+}

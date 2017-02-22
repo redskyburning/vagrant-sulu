@@ -1,1 +1,16 @@
 // Override bootstrap variables here
+$icon-font-path : '/bundles/clientwebsite/default/fonts/';
+
+$navbar-default-bg : $gray-lighter;
+$navbar-default-brand-color : $black;
+
+$navbar-inverse-bg : $gray;
+$navbar-inverse-color : $white;
+$navbar-inverse-brand-color : $white;
+$navbar-inverse-link-color : darken($navbar-inverse-brand-color, 10);
+$navbar-inverse-link-hover-color : $navbar-inverse-brand-color;
+$navbar-inverse-link-active-color : $navbar-inverse-brand-color;
+
+$border-radius-base : 0px;
+$border-radius-large : 0px;
+$border-radius-small : 0px;

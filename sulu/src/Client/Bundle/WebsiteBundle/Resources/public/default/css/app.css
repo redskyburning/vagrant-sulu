@@ -7760,3 +7760,90 @@ button.close {
   height: 300px;
   margin: 0 15px 15px 0;
 }
+
+.template-events__header {
+  min-height: 35vw;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  text-transform: capitalize;
+  padding: 0;
+}
+
+.template-events__header__title-wrap {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.template-events__event {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  position: relative;
+}
+
+.template-events__event, .template-events__event:link, .template-events__event:hover, .template-events__event:active, .template-events__event:visited {
+  color: #fff;
+}
+
+.template-events__event__image {
+  padding-top: 56.25%;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+}
+
+.template-events__event__title {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  right: 15px;
+  text-transform: capitalize;
+}
+
+@media screen and (max-width: 767px) {
+  .template-events__events > * + * {
+    margin-top: 30px;
+  }
+  .template-events__event {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .template-events__events {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .template-events__event {
+    width: calc(33.3333333333% - 20px);
+    margin-bottom: 30px;
+  }
+  .template-events__event__image {
+    padding-top: 100%;
+  }
+  .template-events__event:not(:nth-child(3n + 1)) {
+    margin-left: 30px;
+  }
+}

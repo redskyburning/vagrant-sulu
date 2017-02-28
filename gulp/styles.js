@@ -29,7 +29,6 @@ gulp.task('styles:vendor', [], function () {
 	return gulp.src('./bower.json')
 		.pipe($.mainBowerFiles())
 		.pipe(cssFilter)
-		.pipe($.debug())
 		.pipe($.concat('css/vendor.css'))
 		.pipe(gulp.dest(conf.paths.styleOutput));
 

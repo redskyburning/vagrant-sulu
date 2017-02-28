@@ -40,6 +40,14 @@
             </properties>
         </section>
 
+        <property name="headerimage" type="media_selection">
+            <tag name="sulu.search.field" role="image" index="false"/>
+            <meta>
+                <title lang="de">Headerbild</title>
+                <title lang="en">Header image</title>
+            </meta>
+        </property>
+
         <property name="smartcontent" type="smart_content">
             <meta>
                 <title lang="de">Smart-Content</title>
@@ -47,7 +55,10 @@
             </meta>
 
             <params>
-                <param name="max_per_page" value="5"/>
+                <param name="max_per_page" value="6"/>
+
+                <param name="display_options" type="collection">
+                </param>
 
                 <param name="properties" type="collection">
                     <param name="title" value="title"/>

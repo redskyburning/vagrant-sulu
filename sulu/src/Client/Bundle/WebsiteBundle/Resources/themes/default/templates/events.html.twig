@@ -3,18 +3,31 @@
 {% block meta %}{% include "ClientWebsiteBundle:blocks:meta.html.twig" %}{% endblock %}
 
 {% block content %}
-    <div class="container" id="content" vocab="http://schema.org/" typeof="Content">
+    <div id="content" vocab="http://schema.org/" typeof="Content">
 
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header" property="title">{{ content.title }}</h1>
-                {% autoescape false %}
-                    <div property="article">{{ content.article }}</div>
-                {% endautoescape %}
+        <div class="template-events__header jumbotron"
+                {% if content.headerimage[0].thumbnails['1200x675'] %}
+            style="background-image:url('{{ content.headerimage[0].thumbnails['1200x675'] }}')"
+                {% endif %}>
+            <div class="template-events__header__title-wrap">
+                <h1 class="container template-events__header__title" property="title">{{ content.title }}</h1>
             </div>
         </div>
 
-        <div>
+        <div class="container">
+
+            <div property="smartcontent" class="template-events__events">
+                {% for page in content.smartcontent %}
+                    <a class="template-events__event"
+                       href="{{ sulu_content_path(page.url) }}">
+                        <div class="template-events__event__image"
+                            {% if page.headerimage[0].thumbnails['1200x675'] %}
+                                style="background-image:url('{{ page.headerimage[0].thumbnails['1200x675'] }}')"
+                            {% endif %}></div>
+                        <h2 class="template-events__event__title" property="title">{{ page.title }}</h2>
+                    </a>
+                {% endfor %}
+            </div>
 
             <ul class="pagination">
                 {% set page = view.smartcontent.page %}
@@ -26,20 +39,6 @@
                     <li><a href="{{ sulu_content_path(content.url) }}?p={{ page+1 }}">&raquo;</a></li>
                 {% endif %}
             </ul>
-
-            <div property="smartcontent">
-                {% for page in content.smartcontent %}
-                    <a class="template-default__header jumbotron"
-                         href="{{ sulu_content_path(page.url) }}"
-                        {% if page.headerimage[0].thumbnails['1200x675'] %}
-                            style="background-image:url('{{ page.headerimage[0].thumbnails['1200x675'] }}')"
-                        {% endif %}>
-                        <div class="container">
-                            <h1 property="title">{{ page.title }}</h1>
-                        </div>
-                    </a>
-                {% endfor %}
-            </div>
         </div>
     </div>
 {% endblock %}

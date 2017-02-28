@@ -1,0 +1,82 @@
+.template-events {
+
+  &__header {
+    min-height:35vw;
+    background-repeat: no-repeat;
+    background-position:center top;
+    background-size:cover;
+    color:$white;
+    display:flex;
+    flex-direction:column;
+    justify-content: flex-end;
+    text-transform: capitalize;
+    padding:0;
+
+    &__title-wrap {
+      background:rgba(0,0,0,0.25);
+    }
+
+    &__title {
+
+    }
+  }
+
+  &__event {
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content: flex-end;
+    position:relative;
+
+    &, &:link, &:hover, &:active, &:visited {
+      color:$white;
+    }
+
+    &__image {
+      padding-top:56.25%; // 16:9 aspect
+      background-repeat: no-repeat;
+      background-position:center top;
+      background-size:cover;
+    }
+
+    &__title {
+      position:absolute;
+      bottom:$site-padding;
+      left:$site-padding;
+      right:$site-padding;
+      text-transform: capitalize;
+    }
+  }
+
+  @media screen and (max-width:$screen-xs-max) {
+    &__events {
+      > * + * {
+        margin-top:$site-gutter;
+      }
+    }
+
+    &__event {
+      width:100%;
+    }
+  }
+
+  @media screen and (min-width:$screen-sm) {
+    &__events {
+      display:flex;
+      flex-wrap:wrap;
+    }
+
+    &__event {
+      @include calc-grid-width(3,$site-gutter);
+      margin-bottom:$site-gutter;
+
+      &__image {
+        padding-top:100%;
+      }
+
+      &:not(:nth-child(3n + 1)) {
+        margin-left:$site-gutter
+      }
+    }
+  }
+}

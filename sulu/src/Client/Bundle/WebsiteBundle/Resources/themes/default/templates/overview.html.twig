@@ -19,9 +19,9 @@
                 <h2>Smart-Content</h2>
             </div>
 
-            {{ dump(view.smartcontent) }}
+            {{ dump(content.smartcontent) }}
 
-            <div class="col-lg-6">
+            {#<div class="col-lg-6">
                 {% include "ClientWebsiteBundle:util:categories.html.twig" with {
                     locale: request.locale,
                     withChildren: true,
@@ -31,7 +31,7 @@
             </div>
             <div class="col-lg-6">
                 {% include "ClientWebsiteBundle:util:tags.html.twig" with {parameter: view.smartcontent.tagsParameter} %}
-            </div>
+            </div>#}
 
             <ul class="pagination">
                 {% set page = view.smartcontent.page %}
@@ -46,7 +46,8 @@
 
             <div property="smartcontent">
                 {% for page in content.smartcontent %}
-                    <div class="col-lg-4">
+                    {{ dump(page) }}
+                    <div>
                         <h2>
                             <a href="{{ sulu_content_path(page.url) }}">{{ page.title }}</a>
                         </h2>

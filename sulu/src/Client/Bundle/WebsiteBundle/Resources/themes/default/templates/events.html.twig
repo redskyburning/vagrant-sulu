@@ -1,0 +1,45 @@
+{% extends "ClientWebsiteBundle:views:master.html.twig" %}
+
+{% block meta %}{% include "ClientWebsiteBundle:blocks:meta.html.twig" %}{% endblock %}
+
+{% block content %}
+    <div class="container" id="content" vocab="http://schema.org/" typeof="Content">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header" property="title">{{ content.title }}</h1>
+                {% autoescape false %}
+                    <div property="article">{{ content.article }}</div>
+                {% endautoescape %}
+            </div>
+        </div>
+
+        <div>
+
+            <ul class="pagination">
+                {% set page = view.smartcontent.page %}
+
+                {% if page-1 >= 1 %}
+                    <li><a href="{{ sulu_content_path(content.url) }}?p={{ page-1 }}">&laquo;</a></li>
+                {% endif %}
+                {% if view.smartcontent.hasNextPage %}
+                    <li><a href="{{ sulu_content_path(content.url) }}?p={{ page+1 }}">&raquo;</a></li>
+                {% endif %}
+            </ul>
+
+            <div property="smartcontent">
+                {% for page in content.smartcontent %}
+                    <a class="template-default__header jumbotron"
+                         href="{{ sulu_content_path(page.url) }}"
+                        {% if page.headerimage[0].thumbnails['1200x675'] %}
+                            style="background-image:url('{{ page.headerimage[0].thumbnails['1200x675'] }}')"
+                        {% endif %}>
+                        <div class="container">
+                            <h1 property="title">{{ page.title }}</h1>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

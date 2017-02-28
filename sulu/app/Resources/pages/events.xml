@@ -3,15 +3,15 @@
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd">
 
-    <key>overview</key>
+    <key>events</key>
 
-    <view>ClientWebsiteBundle:templates:overview</view>
+    <view>ClientWebsiteBundle:templates:events</view>
     <controller>SuluWebsiteBundle:Default:index</controller>
     <cacheLifetime>2400</cacheLifetime>
 
     <meta>
         <title lang="de">Übersicht</title>
-        <title lang="en">Overview</title>
+        <title lang="en">Events</title>
     </meta>
 
     <properties>

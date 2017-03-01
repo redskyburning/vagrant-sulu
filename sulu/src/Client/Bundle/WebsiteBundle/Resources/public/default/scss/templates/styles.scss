@@ -1,0 +1,32 @@
+.template-styles {
+  &__content {
+    > * + * {
+      margin-top:$site-gutter;
+      padding-top:$site-gutter;
+      border-top:$site-border;
+    }
+  }
+
+  &__section {
+    border:1px solid $gray-lighter;
+    padding:$site-gutter;
+
+    &__title, &__subtitle {
+      border-bottom:$site-border;
+      margin-bottom:$site-padding;
+
+      &:not(:first-child) {
+        margin-top:$site-gutter;
+      }
+    }
+
+    &__title {
+      margin-top:0;
+      padding-bottom:$site-padding;
+    }
+
+    &__subtitle {
+      padding-bottom:$site-spacing;
+    }
+  }
+}

@@ -126,7 +126,9 @@ abstract class AbstractKernel extends SuluKernel
 
     public function getStoragePath()
     {
+        // $this->rootDir == '/shared/sulu/app'
         $isLowerEnv = in_array($this->environment, array('dev', 'test'));
-        return $this->rootDir . $isLowerEnv ? '../sulu_local' : '';
+        $path = $this->rootDir . ($isLowerEnv ? '/../../sulu_local' : '');
+        return $path;
     }
 }

@@ -1,0 +1,43 @@
+{% extends "ClientWebsiteBundle:views:master.html.twig" %}
+
+{% block meta %}{% include "ClientWebsiteBundle:blocks:meta.html.twig" %}{% endblock %}
+
+{% block content %}
+    <div class="template-styles" id="content" vocab="http://schema.org/" typeof="Content">
+        <div class="page-header container">
+            <h1 class="template-styles__title">Style Guide</h1>
+        </div>
+
+        <section class="container template-styles__section" id="buttons">
+            {% set button_types = ['default','primary','success','info','warning','danger','link'] %}
+            {% set button_sizes = [
+            {
+            name : 'Large',
+            code : '-lg'
+            },
+            {
+            name : 'Regular',
+            code : ''
+            },
+            {
+            name : 'Small',
+            code : '-sm'
+            }
+            ] %}
+
+            <h2 class="template-styles__section__title">Buttons</h2>
+
+            {% for size in button_sizes %}
+
+                <h3 class="template-styles__section__subtitle">{{ size.name }} Buttons</h3>
+                <div>
+                    {% for bt in button_types %}
+                        <a href="#" class="btn btn{{ size.code }} btn-{{ bt }}">{{ bt }}</a>
+                    {% endfor %}
+                </div>
+
+            {% endfor %}
+
+        </section>
+    </div>
+{% endblock %}

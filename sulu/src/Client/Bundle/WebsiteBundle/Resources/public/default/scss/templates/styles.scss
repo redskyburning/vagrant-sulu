@@ -13,6 +13,8 @@
 
     &__title, &__subtitle {
       border-bottom:$site-border;
+      margin-bottom:$site-gutter;
+
       &:not(:first-child) {
         margin-top:$site-gutter;
       }
@@ -21,14 +23,11 @@
     &__title {
       margin-top:0;
       padding-bottom:$site-padding;
-      margin-bottom:$site-gutter;
 
     }
 
     &__subtitle {
       padding-bottom:$site-spacing;
-      margin-bottom:$site-padding;
-
     }
 
     $section:&;

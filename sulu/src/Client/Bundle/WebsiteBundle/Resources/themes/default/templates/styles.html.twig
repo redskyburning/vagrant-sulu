@@ -11,6 +11,81 @@
 
         <div class="template-styles__content">
 
+            <section class="template-styles__section container" id="input-groups">
+                <h2 class="template-styles__section__title">Input Groups</h2>
+                <div class="template-styles__section__body">
+
+                    <div class="form-group">
+                        <label class="control-label" for="basic-addon4">Normal State</label>
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon4">@</span>
+                            <input type="text" class="form-control" placeholder="Email Address"
+                                   aria-describedby="basic-addon4">
+                        </div>
+                        <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+                    </div>
+
+                    <div class="form-group has-success">
+                        <label class="control-label" for="basic-addon4">Success State</label>
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon4">@</span>
+                            <input type="text" class="form-control" placeholder="Email Address"
+                                   value="valid@emailaddress.com"
+                                   aria-describedby="basic-addon4">
+                        </div>
+                        <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+                    </div>
+
+                    <div class="form-group has-warning">
+                        <label class="control-label" for="basic-addon5">Warning State</label>
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon5">@</span>
+                            <input type="text" class="form-control" placeholder="Email Address" value="semi-valid"
+                                   aria-describedby="basic-addon5">
+                        </div>
+                        <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+                    </div>
+
+                    <div class="form-group has-error">
+                        <label class="control-label" for="basic-addon6">Error State</label>
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon6">@</span>
+                            <input type="text" class="form-control" placeholder="Email Address" value="not an email"
+                                   aria-describedby="basic-addon6">
+                        </div>
+                        <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+                    </div>
+
+                    <h3 class="template-styles__section__subtitle">Input Group Addons</h3>
+
+                    <div class="form-group">
+                        <label class="control-label" for="basic-addon4">Addon at the end (button style)</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Recipient's username"
+                                   aria-describedby="basic-addon2">
+                            <a class="input-group-addon" id="basic-addon2">Submit</a>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label" for="basic-addon4">Addon at the start</label>
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon3">https://example.com/users/</span>
+                            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label" for="basic-addon4">Two in one?! Amazing!</label>
+                        <div class="input-group">
+                            <span class="input-group-addon">$</span>
+                            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                            <span class="input-group-addon">.00</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <section class="template-styles__section container" id="colors">
                 {% set colors = {
                 'green'            : 'Green',
@@ -53,8 +128,8 @@
 
                     {% for key, label in semantic_colors %}
                         {% include "ClientWebsiteBundle:components:color_swatch.html.twig" with {
-                            'key' : key,
-                            'label' : label
+                        'key' : key,
+                        'label' : label
                         } %}
                     {% endfor %}
 
@@ -313,6 +388,39 @@ function hello() {
                 <p>In another moment it was on the bank, and in a stride wading halfway across. The knees of its foremost legs bent at the farther bank, and in another moment it had raised itself to its full height again, close to the village of Shepperton. Forthwith the six guns which, unknown to anyone on the right bank, had been hidden behind the outskirts of that village, fired simultaneously. The sudden near concussion, the last close upon the first, made my heart jump. The monster was already raising the case generating the Heat-Ray as the first shell burst six yards above the hood.</p>
             </section>
 
+            <section class="container template-styles__section" id="buttons">
+                {% set button_types = ['default','primary','success','info','warning','danger','link'] %}
+                {% set button_sizes = [
+                {
+                name : 'Regular',
+                code : ''
+                },
+                {
+                name : 'Large',
+                code : '-lg'
+                },
+                {
+                name : 'Small',
+                code : '-sm'
+                }
+                ] %}
+
+                <h2 class="template-styles__section__title">Buttons</h2>
+
+                {% for size in button_sizes %}
+
+                    {% if loop.first == false %}<h3
+                            class="template-styles__section__subtitle">{{ size.name }} Buttons</h3>{% endif %}
+                    <div>
+                        {% for bt in button_types %}
+                            <a href="#" class="btn btn{{ size.code }} btn-{{ bt }}">{{ bt }}</a>
+                        {% endfor %}
+                    </div>
+
+                {% endfor %}
+
+            </section>
+
             <section class="container template-styles__section" id="headings">
 
                 {% set heading_types = ['h1','h2','h3','h4','h5','h6'] %}
@@ -321,47 +429,14 @@ function hello() {
 
                 <div>
                     {% for ht in heading_types %}
-                    <{{ ht }}><strong><u>{{ ht }}</u> :</strong> The <strong>quick</strong> <em>brown</em> <a
-                            href="#">fox jumps</a> over the <small>lazy</small> dog
-                </{{ ht }}>
-                {% endfor %}
-        </div>
-
-        </section>
-
-        <section class="container template-styles__section" id="buttons">
-            {% set button_types = ['default','primary','success','info','warning','danger','link'] %}
-            {% set button_sizes = [
-            {
-            name : 'Regular',
-            code : ''
-            },
-            {
-            name : 'Large',
-            code : '-lg'
-            },
-            {
-            name : 'Small',
-            code : '-sm'
-            }
-            ] %}
-
-            <h2 class="template-styles__section__title">Buttons</h2>
-
-            {% for size in button_sizes %}
-
-                {% if loop.first == false %}<h3
-                        class="template-styles__section__subtitle">{{ size.name }} Buttons</h3>{% endif %}
-                <div>
-                    {% for bt in button_types %}
-                        <a href="#" class="btn btn{{ size.code }} btn-{{ bt }}">{{ bt }}</a>
+                    <{{ ht }}>
+                        <strong><u>{{ ht }}</u> :</strong> The <strong>quick</strong> <em>brown</em> <a href="#">fox jumps</a> over the <small>lazy</small> dog
+                    </{{ ht }}>
                     {% endfor %}
                 </div>
 
-            {% endfor %}
+            </section>
 
-        </section>
-
-    </div>
+        </div>
     </div>
 {% endblock %}

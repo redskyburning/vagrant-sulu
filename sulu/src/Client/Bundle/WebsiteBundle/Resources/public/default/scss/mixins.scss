@@ -5,3 +5,11 @@
 
   width:calc(#{$item-base-width} - #{$per-item-spacing});
 }
+
+@mixin color-swatch-variant($key,$color,$baseClass:'.color-swatch') {
+  #{$baseClass}--#{$key} {
+    #{$baseClass}__swatch {
+      background: $color;
+    }
+  }
+}

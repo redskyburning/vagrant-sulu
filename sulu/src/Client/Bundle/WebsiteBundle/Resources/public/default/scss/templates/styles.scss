@@ -13,8 +13,6 @@
 
     &__title, &__subtitle {
       border-bottom:$site-border;
-      margin-bottom:$site-padding;
-
       &:not(:first-child) {
         margin-top:$site-gutter;
       }
@@ -23,10 +21,46 @@
     &__title {
       margin-top:0;
       padding-bottom:$site-padding;
+      margin-bottom:$site-gutter;
+
     }
 
     &__subtitle {
       padding-bottom:$site-spacing;
+      margin-bottom:$site-padding;
+
+    }
+
+    $section:&;
+    &#colors {
+      & #{$section}__body {
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:space-around;
+      }
+
+      .color-swatch {
+        flex:0 0 200px;
+        margin-bottom: $site-gutter;
+      }
+
+      @include color-swatch-variant('black',$black);
+      @include color-swatch-variant('white',$white);
+      @include color-swatch-variant('red',$red);
+      @include color-swatch-variant('orange',$orange);
+      @include color-swatch-variant('blue',$blue);
+      @include color-swatch-variant('green',$green);
+      @include color-swatch-variant('blue-light',$blue-light);
+      @include color-swatch-variant('gray-darker',$gray-darker);
+      @include color-swatch-variant('gray-dark',$gray-dark);
+      @include color-swatch-variant('gray',$gray);
+      @include color-swatch-variant('gray-light',$gray-light);
+      @include color-swatch-variant('gray-lighter',$gray-lighter);
+      @include color-swatch-variant('brand-primary',$brand-primary);
+      @include color-swatch-variant('brand-success',$brand-success);
+      @include color-swatch-variant('brand-info',$brand-info);
+      @include color-swatch-variant('brand-warning',$brand-warning);
+      @include color-swatch-variant('brand-danger',$brand-danger);
     }
   }
 }

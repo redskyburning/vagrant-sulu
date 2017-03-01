@@ -1,0 +1,26 @@
+.color-swatch {
+  $swatch-size: 50px;
+
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items:center;
+  break-inside: avoid;
+
+  > * + * {
+    margin-top: $site-spacing;
+  }
+
+  &__swatch {
+    width: $swatch-size;
+    height: $swatch-size;
+    border-radius:$swatch-size/2;
+    border:1px solid rgba(0,0,0,0.1);
+    flex: 0 0 auto;
+  }
+
+  &__label {
+    //flex: 1 1 auto;
+    font-size: 20px;
+  }
+}

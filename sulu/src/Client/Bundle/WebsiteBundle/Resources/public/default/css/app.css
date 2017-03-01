@@ -1398,7 +1398,7 @@ a {
 }
 
 a:hover, a:focus {
-  color: #23527c;
+  color: #22527b;
   text-decoration: underline;
 }
 
@@ -1632,7 +1632,7 @@ mark,
 
 a.text-primary:hover,
 a.text-primary:focus {
-  color: #286090;
+  color: #285f8f;
 }
 
 .text-success {
@@ -1681,7 +1681,7 @@ a.text-danger:focus {
 
 a.bg-primary:hover,
 a.bg-primary:focus {
-  background-color: #286090;
+  background-color: #285f8f;
 }
 
 .bg-success {
@@ -3701,26 +3701,26 @@ fieldset[disabled] .btn-default.focus {
 .btn-primary {
   color: #fff;
   background-color: #337ab7;
-  border-color: #2e6da4;
+  border-color: #2d6da3;
 }
 
 .btn-primary:focus, .btn-primary.focus {
   color: #fff;
-  background-color: #286090;
-  border-color: #122b40;
+  background-color: #285f8f;
+  border-color: #122a3f;
 }
 
 .btn-primary:hover {
   color: #fff;
-  background-color: #286090;
-  border-color: #204d74;
+  background-color: #285f8f;
+  border-color: #204d73;
 }
 
 .btn-primary:active, .btn-primary.active,
 .open > .btn-primary.dropdown-toggle {
   color: #fff;
-  background-color: #286090;
-  border-color: #204d74;
+  background-color: #285f8f;
+  border-color: #204d73;
 }
 
 .btn-primary:active:hover, .btn-primary:active:focus, .btn-primary:active.focus, .btn-primary.active:hover, .btn-primary.active:focus, .btn-primary.active.focus,
@@ -3728,8 +3728,8 @@ fieldset[disabled] .btn-default.focus {
 .open > .btn-primary.dropdown-toggle:focus,
 .open > .btn-primary.dropdown-toggle.focus {
   color: #fff;
-  background-color: #204d74;
-  border-color: #122b40;
+  background-color: #204d73;
+  border-color: #122a3f;
 }
 
 .btn-primary:active, .btn-primary.active,
@@ -3742,7 +3742,7 @@ fieldset[disabled] .btn-primary:hover,
 fieldset[disabled] .btn-primary:focus,
 fieldset[disabled] .btn-primary.focus {
   background-color: #337ab7;
-  border-color: #2e6da4;
+  border-color: #2d6da3;
 }
 
 .btn-primary .badge {
@@ -3975,7 +3975,7 @@ fieldset[disabled] .btn-link {
 }
 
 .btn-link:hover, .btn-link:focus {
-  color: #23527c;
+  color: #22527b;
   text-decoration: underline;
   background-color: transparent;
 }
@@ -5411,7 +5411,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pagination > li > span:hover,
 .pagination > li > span:focus {
   z-index: 2;
-  color: #23527c;
+  color: #22527b;
   background-color: #eeeeee;
   border-color: #ddd;
 }
@@ -5572,7 +5572,7 @@ a.label:hover, a.label:focus {
 }
 
 .label-primary[href]:hover, .label-primary[href]:focus {
-  background-color: #286090;
+  background-color: #285f8f;
 }
 
 .label-success {
@@ -7716,6 +7716,43 @@ button.close {
   border-top: 30px;
 }
 
+.color-swatch {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-break-inside: avoid;
+     page-break-inside: avoid;
+          break-inside: avoid;
+}
+
+.color-swatch > * + * {
+  margin-top: 7.5px;
+}
+
+.color-swatch__swatch {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+}
+
+.color-swatch__label {
+  font-size: 20px;
+}
+
 .template-default__header {
   min-height: 35vw;
   background-repeat: no-repeat;
@@ -7861,7 +7898,6 @@ button.close {
 
 .template-styles__section__title, .template-styles__section__subtitle {
   border-bottom: 1px solid #777777;
-  margin-bottom: 15px;
 }
 
 .template-styles__section__title:not(:first-child), .template-styles__section__subtitle:not(:first-child) {
@@ -7871,8 +7907,95 @@ button.close {
 .template-styles__section__title {
   margin-top: 0;
   padding-bottom: 15px;
+  margin-bottom: 30px;
 }
 
 .template-styles__section__subtitle {
   padding-bottom: 7.5px;
+  margin-bottom: 15px;
+}
+
+.template-styles__section#colors .template-styles__section__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.template-styles__section#colors .color-swatch {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 200px;
+          flex: 0 0 200px;
+  margin-bottom: 30px;
+}
+
+.template-styles__section#colors .color-swatch--black .color-swatch__swatch {
+  background: #333;
+}
+
+.template-styles__section#colors .color-swatch--white .color-swatch__swatch {
+  background: #fff;
+}
+
+.template-styles__section#colors .color-swatch--red .color-swatch__swatch {
+  background: #d9534f;
+}
+
+.template-styles__section#colors .color-swatch--orange .color-swatch__swatch {
+  background: #f0ad4e;
+}
+
+.template-styles__section#colors .color-swatch--blue .color-swatch__swatch {
+  background: #337ab7;
+}
+
+.template-styles__section#colors .color-swatch--green .color-swatch__swatch {
+  background: #5cb85c;
+}
+
+.template-styles__section#colors .color-swatch--blue-light .color-swatch__swatch {
+  background: #5bc0de;
+}
+
+.template-styles__section#colors .color-swatch--gray-darker .color-swatch__swatch {
+  background: #222222;
+}
+
+.template-styles__section#colors .color-swatch--gray-dark .color-swatch__swatch {
+  background: #333333;
+}
+
+.template-styles__section#colors .color-swatch--gray .color-swatch__swatch {
+  background: #555555;
+}
+
+.template-styles__section#colors .color-swatch--gray-light .color-swatch__swatch {
+  background: #777777;
+}
+
+.template-styles__section#colors .color-swatch--gray-lighter .color-swatch__swatch {
+  background: #eeeeee;
+}
+
+.template-styles__section#colors .color-swatch--brand-primary .color-swatch__swatch {
+  background: #337ab7;
+}
+
+.template-styles__section#colors .color-swatch--brand-success .color-swatch__swatch {
+  background: #5cb85c;
+}
+
+.template-styles__section#colors .color-swatch--brand-info .color-swatch__swatch {
+  background: #5bc0de;
+}
+
+.template-styles__section#colors .color-swatch--brand-warning .color-swatch__swatch {
+  background: #f0ad4e;
+}
+
+.template-styles__section#colors .color-swatch--brand-danger .color-swatch__swatch {
+  background: #d9534f;
 }

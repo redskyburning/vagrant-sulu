@@ -38,854 +38,1074 @@ code : ' focus'
             <h1 class="template-styles__title">Style Guide</h1>
         </div>
 
-        <div class="template-styles__content">
+            <div class="template-styles__content">
 
-            <section class="template-styles__section container" id="code">
-                <h2 class="template-styles__section__title">Paragraphs</h2>
-                <div class="template-styles__section__body">
+                <section class="template-styles__section container" id="code">
+                    <h2 class="template-styles__section__title">Paragraphs</h2>
+                    <div class="template-styles__section__body">
 
-                    <h3 class="template-styles__section__subtitle">Block Quotes</h3>
-                </div>
-            </section>
-
-            <section class="template-styles__section container" id="code">
-                <h2 class="template-styles__section__title">Jumbotron</h2>
-                <div class="template-styles__section__body">
-                    <div class="jumbotron">
-                        <h1>Hello, world!</h1>
-                        <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-                        <p><a href="#" class="btn btn-primary btn-lg" role="button">Learn more</a></p>
+                        <h3 class="template-styles__section__subtitle">Block Quotes</h3>
                     </div>
-                </div>
-            </section>
+                </section>
 
-            <section class="template-styles__section jumbotron" id="jumbo-full">
-                <div class="container">
-                    <h1>Full Bleed Jumbotron!</h1>
-                    <p>This version fills the viewport</p>
-                    <p><a href="#" class="btn btn-primary btn-lg" role="button">Learn more</a></p>
-                </div>
-            </section>
+                <section class="template-styles__section container" id="code">
+                    <h2 class="template-styles__section__title">Carousel</h2>
+                    <div class="template-styles__section__body col-sm-6">
 
-            <section class="template-styles__section container" id="pagination">
-                <h2 class="template-styles__section__title">Pagination</h2>
-                <div class="template-styles__section__body">
+                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 
-                    <nav aria-label="Page navigation">
-                        <ul class="pagination">
-                            <li>
-                                <a href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                                </a>
-                            </li>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#" class="active">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#" class="disabled">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li>
-                                <a href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
+                            {% set slides = [
+                            {
+                            'url' : 'http://placehold.it/600x300',
+                            'caption' : 'This is the caption',
+                            },
+                            {
+                            'url' : 'http://placehold.it/600x300',
+                            'caption' : 'This is the caption',
+                            },
+                            {
+                            'url' : 'http://placehold.it/600x300',
+                            'caption' : 'This is the caption',
+                            }
+                            ] %}
+                            <!-- Indicators -->
+                            <ol class="carousel-indicators">
+                                {% for slide in slides %}
+                                    <li data-target="#carousel-example-generic"
+                                        data-slide-to="{{ loop.index0 }}"
+                                        {% if loop.first %}class="active"{% endif %}></li>
+                                {%  endfor %}
+                            </ol>
 
-                    <h3 class="template-styles__section__subtitle">Large Pagination</h3>
-
-                    <nav aria-label="Page navigation">
-                        <ul class="pagination pagination-lg">
-                            <li>
-                                <a href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                                </a>
-                            </li>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#" class="active">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#" class="disabled">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li>
-                                <a href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-
-                    <h3 class="template-styles__section__subtitle">Small Pagination</h3>
-
-                    <nav aria-label="Page navigation">
-                        <ul class="pagination pagination-sm">
-                            <li>
-                                <a href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                                </a>
-                            </li>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#" class="active">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#" class="disabled">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li>
-                                <a href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-
-                    <h3 class="template-styles__section__subtitle">Pager</h3>
-
-                    <nav aria-label="...">
-                        <ul class="pager">
-                            <li class="disabled"><a href="#"><span aria-hidden="true">&larr;</span> Older (Disabled)</a></li>
-                            <li ><a href="#">Newer <span aria-hidden="true">&rarr;</span></a></li>
-                        </ul>
-                    </nav>
-
-                    <h3 class="template-styles__section__subtitle">Aligned Pager</h3>
-
-                    <nav aria-label="...">
-                        <ul class="pager">
-                            <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Older (Disabled)</a></li>
-                            <li class="next"><a href="#">Newer <span aria-hidden="true">&rarr;</span></a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </section>
-
-            <section class="template-styles__section container" id="breadcrumbs">
-                <h2 class="template-styles__section__title">Bread Crumbs</h2>
-                <div class="template-styles__section__body">
-                    <div class="col-sm-4" data-example-id="simple-breadcrumbs">
-                        <ol class="breadcrumb">
-                            <li class="active">Home</li>
-                        </ol>
-                        <ol class="breadcrumb">
-                            <li><a href="#">Home</a></li>
-                            <li class="active">Library</li>
-                        </ol>
-                        <ol class="breadcrumb">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Library</a></li>
-                            <li class="active">Data</li>
-                        </ol>
-                    </div>
-                </div>
-            </section>
-
-            <section class="container template-styles__section" id="dropdowns">
-
-                <h2 class="template-styles__section__title">Dropdowns</h2>
-
-                <div class="template-styles__dropdown-group">
-                    {% for bt in button_types %}
-                        <div class="dropdown template-styles__dropdown">
-                            <button class="btn btn-{{ bt }} dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                {{ bt }}
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="#">Separated link</a></li>
-                            </ul>
-                        </div>
-                    {% endfor %}
-                </div>
-
-                <h3 class="template-styles__section__subtitle">Dropups</h3>
-
-                <div class="template-styles__dropdown-group">
-                    {% for bt in button_types %}
-                        <div class="dropup template-styles__dropup">
-                            <button class="btn btn-{{ bt }} dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                {{  bt }}
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="#">Separated link</a></li>
-                            </ul>
-                        </div>
-                    {% endfor %}
-                </div>
-
-                <h3 class="template-styles__section__subtitle">Button Dropdowns</h3>
-
-                <div class="template-styles__dropdown-group">
-                    {% for bt in button_types %}
-                        <!-- Single button -->
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-{{ bt }} dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                {{ bt }} <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="#">Separated link</a></li>
-                            </ul>
-                        </div>
-                    {% endfor %}
-                </div>
-
-                <h3 class="template-styles__section__subtitle">Split Button Dropdowns</h3>
-
-                <div class="template-styles__dropdown-group">
-                    {% for bt in button_types %}
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-{{ bt }}">{{ bt }}</button>
-                            <button type="button" class="btn btn-{{ bt }} dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="caret"></span>
-                                <span class="sr-only">Toggle Dropdown</span>
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="#">Separated link</a></li>
-                            </ul>
-                        </div>
-                    {% endfor %}
-                </div>
-
-            </section>
-
-            <section class="container template-styles__section" id="buttons">
-
-                <h2 class="template-styles__section__title">Buttons</h2>
-
-                {% for size in button_sizes %}
-
-                    {% if loop.first == false %}<h3
-                            class="template-styles__section__subtitle">{{ size.name }} Buttons</h3>{% endif %}
-                    <div>
-                        {% for bt in button_types %}
-                            <a href="#" class="btn btn{{ size.code }} btn-{{ bt }}">{{ bt }}</a>
-                        {% endfor %}
-                    </div>
-
-                {% endfor %}
-
-            </section>
-            
-            <section class="template-styles__section container" id="inputs">
-                <h2 class="template-styles__section__title">Inputs</h2>
-                <div class="template-styles__section__body">
-
-                    <form>
-
-                        <div class="form-group form-group-sm">
-                            <input type="input" class="form-control"  placeholder="Small Input" >
-                        </div>
-
-                        <div class="form-group">
-                            <input type="input" class="form-control" placeholder="Regular Input">
-                        </div>
-
-                        <div class="form-group form-group-lg">
-                            <input type="input" class="form-control"  placeholder="Large Input">
-                        </div>
-
-                        <div class="form-group">
-                            <input type="input" class="form-control" placeholder="Disabled Input" disabled>
-                        </div>
-
-                        <div class="form-group">
-                            <input type="input" class="form-control" placeholder="Readonly Input" readonly>
-                        </div>
-
-                        <div class="form-group">
-                            <input type="password" class="form-control" id="passwordInput" placeholder="Password">
-                        </div>
-
-                        <div class="form-group">
-                            <label class="control-label" for="textarea">Textarea</label>
-                            <textarea class="form-control" id="textarea" placeholder="Textarea" rows="3"></textarea>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="control-label" for="exampleSelect">Select</label>
-                            <select class="form-control" id="exampleSelect">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                            </select>
-                            <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
-                        </div>
-
-                        <label>Checkboxes</label>
-                        <div class="checkbox">
-                            <label class="control-label">
-                                <input type="checkbox" value="">
-                                Option one is this and that&mdash;be sure to include why it's great
-                            </label>
-                        </div>
-                        <div class="checkbox disabled">
-                            <label class="control-label">
-                                <input type="checkbox" value="" disabled>
-                                Option two is disabled
-                            </label>
-                        </div>
-
-                        <label>Radio Buttons</label>
-                        <div class="radio">
-                            <label class="control-label">
-                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                                Option one is this and that&mdash;be sure to include why it's great
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <label class="control-label">
-                                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                                Option two can be something else and selecting it will deselect option one
-                            </label>
-                        </div>
-                        <div class="radio disabled">
-                            <label class="control-label">
-                                <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
-                                Option three is disabled
-                            </label>
-                        </div>
-                    </form>
-                </div>
-            </section>
-
-            <section class="template-styles__section container" id="input-groups">
-                <h2 class="template-styles__section__title">Input Groups</h2>
-                <div class="template-styles__section__body">
-
-                    <div class="form-group">
-                        <label class="control-label" for="basic-addon4">Normal State</label>
-                        <div class="input-group">
-                            <span class="input-group-addon" id="basic-addon4">@</span>
-                            <input type="text" class="form-control" placeholder="Email Address"
-                                   aria-describedby="basic-addon4">
-                        </div>
-                        <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
-                    </div>
-
-                    <div class="form-group has-success">
-                        <label class="control-label" for="basic-addon4">Success State</label>
-                        <div class="input-group">
-                            <span class="input-group-addon" id="basic-addon4">@</span>
-                            <input type="text" class="form-control" placeholder="Email Address"
-                                   value="valid@emailaddress.com"
-                                   aria-describedby="basic-addon4">
-                        </div>
-                        <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
-                    </div>
-
-                    <div class="form-group has-warning">
-                        <label class="control-label" for="basic-addon5">Warning State</label>
-                        <div class="input-group">
-                            <span class="input-group-addon" id="basic-addon5">@</span>
-                            <input type="text" class="form-control" placeholder="Email Address" value="semi-valid"
-                                   aria-describedby="basic-addon5">
-                        </div>
-                        <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
-                    </div>
-
-                    <div class="form-group has-error">
-                        <label class="control-label" for="basic-addon6">Error State</label>
-                        <div class="input-group">
-                            <span class="input-group-addon" id="basic-addon6">@</span>
-                            <input type="text" class="form-control" placeholder="Email Address" value="not an email"
-                                   aria-describedby="basic-addon6">
-                        </div>
-                        <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
-                    </div>
-
-                    <h3 class="template-styles__section__subtitle">Input Group Addons</h3>
-
-                    <div class="form-group">
-                        <label class="control-label" for="basic-addon4">Addon at the end (button style)</label>
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Recipient's username"
-                                   aria-describedby="basic-addon2">
-                            <a class="input-group-addon" id="basic-addon2">Submit</a>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="control-label" for="basic-addon4">Addon at the start</label>
-                        <div class="input-group">
-                            <span class="input-group-addon" id="basic-addon3">https://example.com/users/</span>
-                            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="control-label" for="basic-addon4">Two in one?! Amazing!</label>
-                        <div class="input-group">
-                            <span class="input-group-addon">$</span>
-                            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-                            <span class="input-group-addon">.00</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="template-styles__section container" id="forms">
-                <h2 class="template-styles__section__title">Forms</h2>
-                <div class="template-styles__section__body">
-
-                    <div class="row">
-                        <form class="col-sm-4">
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner" role="listbox">
+                                {% for slide in slides %}
+                                    <div class="item {% if loop.first %}active{% endif %}">
+                                        <img src="{{ slide.url }}">
+                                        <div class="carousel-caption">
+                                            {{ slide.caption }}
+                                        </div>
+                                    </div>
+                                {% endfor %}
                             </div>
-                            <div class="form-group">
-                                <label for="exampleInputPassword1">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputFile">File input</label>
-                                <input type="file" id="exampleInputFile">
-                                <p class="help-block">Example block-level help text here.</p>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox"> Check me out
-                                </label>
-                            </div>
-                            <button type="submit" class="btn btn-default">Submit</button>
-                        </form>
+
+                            <!-- Controls -->
+                            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                            </a>
+                        </div>
 
                     </div>
+                </section>
 
-                    <h3 class="template-styles__section__subtitle">Inline Form</h3>
+                <section class="template-styles__section container" id="accordion">
+                    <h2 class="template-styles__section__title">Accordion</h2>
+                    <div class="template-styles__section__body">
 
-                    <form class="form-inline">
-                        <div class="form-group">
-                            <label for="exampleInputName2">Name</label>
-                            <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail2">Email</label>
-                            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
-                        </div>
-                        <button type="submit" class="btn btn-default">Send invitation</button>
-                    </form>
-
-                    <h3 class="template-styles__section__subtitle">Horizontal Form</h3>
-
-                    <div class="row">
-                        <form class="form-horizontal col-sm-6">
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-                                <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingOne">
+                                    <h4 class="panel-title">
+                                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Collapsible Group Item #1
+                                        </a>
+                                    </h4>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-                                <div class="col-sm-10">
-                                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-sm-offset-2 col-sm-10">
-                                    <div class="checkbox">
-                                        <label class="control-label">
-                                            <input type="checkbox"> Remember me
-                                        </label>
+                                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                    <div class="panel-body">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <div class="col-sm-offset-2 col-sm-10">
-                                    <button type="submit" class="btn btn-default">Sign in</button>
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingTwo">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Collapsible Group Item #2
+                                        </a>
+                                    </h4>
                                 </div>
+                                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                    <div class="panel-body">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingThree">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Collapsible Group Item #3
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                    <div class="panel-body">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 class="template-styles__section__subtitle">Block Quotes</h3>
+                    </div>
+                </section>
+
+                <section class="template-styles__section container" id="modals">
+                    <h2 class="template-styles__section__title">Modals</h2>
+                    <div class="template-styles__section__body">
+
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                            Regular Modal
+                        </button>
+
+                        <!-- Large modal -->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button>
+
+                        <!-- Small modal -->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Small modal</button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Then, advancing obliquely towards us, came a fifth.  Their armoured bodies glittered in the sun as they swept swiftly forward upon the guns, growing rapidly larger as they drew nearer.  One on the extreme left, the remotest that is, flourished a huge case high in the air, and the ghostly, terrible Heat-Ray I had already seen on Friday night smote towards Chertsey, and struck the town.</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Then, advancing obliquely towards us, came a fifth.  Their armoured bodies glittered in the sun as they swept swiftly forward upon the guns, growing rapidly larger as they drew nearer.  One on the extreme left, the remotest that is, flourished a huge case high in the air, and the ghostly, terrible Heat-Ray I had already seen on Friday night smote towards Chertsey, and struck the town.</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                            <div class="modal-dialog modal-sm" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Then, advancing obliquely towards us, came a fifth.  Their armoured bodies glittered in the sun as they swept swiftly forward upon the guns, growing rapidly larger as they drew nearer.  One on the extreme left, the remotest that is, flourished a huge case high in the air, and the ghostly, terrible Heat-Ray I had already seen on Friday night smote towards Chertsey, and struck the town.</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section class="template-styles__section container" id="alert">
+                    <h2 class="template-styles__section__title">Alerts</h2>
+                    <div class="template-styles__section__body">
+                        <div class="alert alert-success" role="alert">
+                            <strong>Success Alert!</strong> You successfully read this important alert message.
+                        </div>
+                        <div class="alert alert-info" role="alert">
+                            <strong>Info Alert!</strong> This alert needs your attention, but it's not super important.
+                        </div>
+                        <div class="alert alert-warning" role="alert">
+                            <strong>Warning Alert!</strong> Better check yourself, you're not looking too good.
+                        </div>
+                        <div class="alert alert-danger" role="alert">
+                            <strong>Danger Alert!</strong> Change a few things up and try submitting again.
+                        </div>
+                        <div class="alert alert-warning alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <strong>Dismissable Alert!</strong> Better check yourself, you're not looking too good.
+                        </div>
+                    </div>
+                </section>
+
+                <section class="template-styles__section container" id="jumbotron">
+                    <h2 class="template-styles__section__title">Jumbotron</h2>
+                    <div class="template-styles__section__body">
+                        <div class="jumbotron">
+                            <h1>Hello, world!</h1>
+                            <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                            <p><a href="#" class="btn btn-primary btn-lg" role="button">Learn more</a></p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="template-styles__section jumbotron" id="jumbo-full">
+                    <div class="container">
+                        <h1>Full Bleed Jumbotron!</h1>
+                        <p>This version fills the viewport</p>
+                        <p><a href="#" class="btn btn-primary btn-lg" role="button">Learn more</a></p>
+                    </div>
+                </section>
+
+                <section class="template-styles__section container" id="pagination">
+                    <h2 class="template-styles__section__title">Pagination</h2>
+                    <div class="template-styles__section__body">
+
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination">
+                                <li>
+                                    <a href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <li><a href="#">1</a></li>
+                                <li><a href="#" class="active">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#" class="disabled">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li>
+                                    <a href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+
+                        <h3 class="template-styles__section__subtitle">Large Pagination</h3>
+
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination pagination-lg">
+                                <li>
+                                    <a href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <li><a href="#">1</a></li>
+                                <li><a href="#" class="active">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#" class="disabled">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li>
+                                    <a href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+
+                        <h3 class="template-styles__section__subtitle">Small Pagination</h3>
+
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination pagination-sm">
+                                <li>
+                                    <a href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <li><a href="#">1</a></li>
+                                <li><a href="#" class="active">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#" class="disabled">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li>
+                                    <a href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+
+                        <h3 class="template-styles__section__subtitle">Pager</h3>
+
+                        <nav aria-label="...">
+                            <ul class="pager">
+                                <li class="disabled"><a href="#"><span aria-hidden="true">&larr;</span> Older (Disabled)</a></li>
+                                <li ><a href="#">Newer <span aria-hidden="true">&rarr;</span></a></li>
+                            </ul>
+                        </nav>
+
+                        <h3 class="template-styles__section__subtitle">Aligned Pager</h3>
+
+                        <nav aria-label="...">
+                            <ul class="pager">
+                                <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Older (Disabled)</a></li>
+                                <li class="next"><a href="#">Newer <span aria-hidden="true">&rarr;</span></a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </section>
+
+                <section class="template-styles__section container" id="breadcrumbs">
+                    <h2 class="template-styles__section__title">Bread Crumbs</h2>
+                    <div class="template-styles__section__body">
+                        <div class="col-sm-4" data-example-id="simple-breadcrumbs">
+                            <ol class="breadcrumb">
+                                <li class="active">Home</li>
+                            </ol>
+                            <ol class="breadcrumb">
+                                <li><a href="#">Home</a></li>
+                                <li class="active">Library</li>
+                            </ol>
+                            <ol class="breadcrumb">
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Library</a></li>
+                                <li class="active">Data</li>
+                            </ol>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="container template-styles__section" id="dropdowns">
+
+                    <h2 class="template-styles__section__title">Dropdowns</h2>
+
+                    <div class="template-styles__dropdown-group">
+                        {% for bt in button_types %}
+                            <div class="dropdown template-styles__dropdown">
+                                <button class="btn btn-{{ bt }} dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    {{ bt }}
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                </ul>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                    <h3 class="template-styles__section__subtitle">Dropups</h3>
+
+                    <div class="template-styles__dropdown-group">
+                        {% for bt in button_types %}
+                            <div class="dropup template-styles__dropup">
+                                <button class="btn btn-{{ bt }} dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    {{  bt }}
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                </ul>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                    <h3 class="template-styles__section__subtitle">Button Dropdowns</h3>
+
+                    <div class="template-styles__dropdown-group">
+                        {% for bt in button_types %}
+                            <!-- Single button -->
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-{{ bt }} dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    {{ bt }} <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                </ul>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                    <h3 class="template-styles__section__subtitle">Split Button Dropdowns</h3>
+
+                    <div class="template-styles__dropdown-group">
+                        {% for bt in button_types %}
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-{{ bt }}">{{ bt }}</button>
+                                <button type="button" class="btn btn-{{ bt }} dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                </ul>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                </section>
+
+                <section class="container template-styles__section" id="buttons">
+
+                    <h2 class="template-styles__section__title">Buttons</h2>
+
+                    {% for size in button_sizes %}
+
+                        {% if loop.first == false %}<h3
+                                class="template-styles__section__subtitle">{{ size.name }} Buttons</h3>{% endif %}
+                        <div>
+                            {% for bt in button_types %}
+                                <a href="#" class="btn btn{{ size.code }} btn-{{ bt }}">{{ bt }}</a>
+                            {% endfor %}
+                        </div>
+
+                    {% endfor %}
+
+                </section>
+
+                <section class="template-styles__section container" id="inputs">
+                    <h2 class="template-styles__section__title">Inputs</h2>
+                    <div class="template-styles__section__body">
+
+                        <form>
+
+                            <div class="form-group form-group-sm">
+                                <input type="input" class="form-control"  placeholder="Small Input" >
+                            </div>
+
+                            <div class="form-group">
+                                <input type="input" class="form-control" placeholder="Regular Input">
+                            </div>
+
+                            <div class="form-group form-group-lg">
+                                <input type="input" class="form-control"  placeholder="Large Input">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="input" class="form-control" placeholder="Disabled Input" disabled>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="input" class="form-control" placeholder="Readonly Input" readonly>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="passwordInput" placeholder="Password">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label" for="textarea">Textarea</label>
+                                <textarea class="form-control" id="textarea" placeholder="Textarea" rows="3"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label" for="exampleSelect">Select</label>
+                                <select class="form-control" id="exampleSelect">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                                <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+                            </div>
+
+                            <label>Checkboxes</label>
+                            <div class="checkbox">
+                                <label class="control-label">
+                                    <input type="checkbox" value="">
+                                    Option one is this and that&mdash;be sure to include why it's great
+                                </label>
+                            </div>
+                            <div class="checkbox disabled">
+                                <label class="control-label">
+                                    <input type="checkbox" value="" disabled>
+                                    Option two is disabled
+                                </label>
+                            </div>
+
+                            <label>Radio Buttons</label>
+                            <div class="radio">
+                                <label class="control-label">
+                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                                    Option one is this and that&mdash;be sure to include why it's great
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label class="control-label">
+                                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                    Option two can be something else and selecting it will deselect option one
+                                </label>
+                            </div>
+                            <div class="radio disabled">
+                                <label class="control-label">
+                                    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
+                                    Option three is disabled
+                                </label>
                             </div>
                         </form>
                     </div>
-                </div>
-            </section>
+                </section>
 
-            <section class="template-styles__section container" id="tables">
-                <h2 class="template-styles__section__title">Tables</h2>
-                <div class="template-styles__section__body">
-                    <table class="table table-responsive">
-                        <thead>
-                        <th>English</th>
-                        <th>French</th>
-                        <th>German</th>
-                        <th>Spanish</th>
-                        </thead>
-                        <tr>
-                            <td>One</td>
-                            <td>Un</td>
-                            <td>Eins</td>
-                            <td>Uno</td>
-                        </tr>
-                        <tr>
-                            <td>Two</td>
-                            <td>Deux</td>
-                            <td>Zwei</td>
-                            <td>Uno</td>
-                        </tr>
-                        <tr>
-                            <td>Three</td>
-                            <td>Trois</td>
-                            <td>Drei</td>
-                            <td>Tres</td>
-                        </tr>
-                    </table>
+                <section class="template-styles__section container" id="input-groups">
+                    <h2 class="template-styles__section__title">Input Groups</h2>
+                    <div class="template-styles__section__body">
 
-                    <h3 class="template-styles__section__subtitle">Stripped Table</h3>
+                        <div class="form-group">
+                            <label class="control-label" for="basic-addon4">Normal State</label>
+                            <div class="input-group">
+                                <span class="input-group-addon" id="basic-addon4">@</span>
+                                <input type="text" class="form-control" placeholder="Email Address"
+                                       aria-describedby="basic-addon4">
+                            </div>
+                            <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+                        </div>
 
-                    <table class="table table-responsive table-striped">
-                        <thead>
-                        <th>English</th>
-                        <th>French</th>
-                        <th>German</th>
-                        <th>Spanish</th>
-                        </thead>
-                        <tr>
-                            <td>One</td>
-                            <td>Un</td>
-                            <td>Eins</td>
-                            <td>Uno</td>
-                        </tr>
-                        <tr>
-                            <td>Two</td>
-                            <td>Deux</td>
-                            <td>Zwei</td>
-                            <td>Uno</td>
-                        </tr>
-                        <tr>
-                            <td>Three</td>
-                            <td>Trois</td>
-                            <td>Drei</td>
-                            <td>Tres</td>
-                        </tr>
-                    </table>
+                        <div class="form-group has-success">
+                            <label class="control-label" for="basic-addon4">Success State</label>
+                            <div class="input-group">
+                                <span class="input-group-addon" id="basic-addon4">@</span>
+                                <input type="text" class="form-control" placeholder="Email Address"
+                                       value="valid@emailaddress.com"
+                                       aria-describedby="basic-addon4">
+                            </div>
+                            <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+                        </div>
 
-                    <h3 class="template-styles__section__subtitle">Hover Table</h3>
-                    <table class="table table-responsive table-hover">
-                        <thead>
-                        <th>English</th>
-                        <th>French</th>
-                        <th>German</th>
-                        <th>Spanish</th>
-                        </thead>
-                        <tr>
-                            <td>One</td>
-                            <td>Un</td>
-                            <td>Eins</td>
-                            <td>Uno</td>
-                        </tr>
-                        <tr>
-                            <td>Two</td>
-                            <td>Deux</td>
-                            <td>Zwei</td>
-                            <td>Uno</td>
-                        </tr>
-                        <tr>
-                            <td>Three</td>
-                            <td>Trois</td>
-                            <td>Drei</td>
-                            <td>Tres</td>
-                        </tr>
-                    </table>
+                        <div class="form-group has-warning">
+                            <label class="control-label" for="basic-addon5">Warning State</label>
+                            <div class="input-group">
+                                <span class="input-group-addon" id="basic-addon5">@</span>
+                                <input type="text" class="form-control" placeholder="Email Address" value="semi-valid"
+                                       aria-describedby="basic-addon5">
+                            </div>
+                            <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+                        </div>
 
-                    <h3 class="template-styles__section__subtitle">Table Classes</h3>
-                    <table class="table table-responsive table-hover">
-                        <thead>
-                        <th>English</th>
-                        <th>French</th>
-                        <th>German</th>
-                        <th>Spanish</th>
-                        </thead>
-                        <tr class="active">
-                            <td>active</td>
-                            <td>actif</td>
-                            <td>aktive</td>
-                            <td>éxito</td>
-                        </tr>
-                        <tr class="success">
-                            <td>success</td>
-                            <td>succès</td>
-                            <td>erfolg</td>
-                            <td>activo</td>
-                        </tr>
-                        <tr class="info">
-                            <td>info</td>
-                            <td>infos</td>
-                            <td>info</td>
-                            <td>info</td>
-                        </tr>
-                        <tr class="warning">
-                            <td>warning</td>
-                            <td>avertissement</td>
-                            <td>warnende</td>
-                            <td>aviso</td>
-                        </tr>
-                        <tr class="danger">
-                            <td>danger</td>
-                            <td>danger</td>
-                            <td>gefahr</td>
-                            <td>peligro</td>
-                        </tr>
-                    </table>
-                </div>
-            </section>
+                        <div class="form-group has-error">
+                            <label class="control-label" for="basic-addon6">Error State</label>
+                            <div class="input-group">
+                                <span class="input-group-addon" id="basic-addon6">@</span>
+                                <input type="text" class="form-control" placeholder="Email Address" value="not an email"
+                                       aria-describedby="basic-addon6">
+                            </div>
+                            <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+                        </div>
 
-            <section class="template-styles__section container" id="colors">
-                {% set colors = {
-                'green'            : 'Green',
-                'blue'            : 'Blue',
-                'blue-light'            : 'Light Blue',
-                'red'            : 'Red',
-                'orange'            : 'Orange',
-                'black'            : 'Black',
-                'gray-lighter'   : 'Lighter Gray',
-                'gray-light'     : 'Light Gray',
-                'gray'           : 'Gray',
-                'gray-dark'      : 'Dark Gray',
-                'gray-darker'    : 'Darker Gray',
-                } %}
+                        <h3 class="template-styles__section__subtitle">Input Group Addons</h3>
 
-                {% set semantic_colors = {
-                'brand-primary'   : 'Primary',
-                'brand-success'   : 'Success',
-                'brand-info'   : 'Info',
-                'brand-warning'   : 'Warning',
-                'brand-danger'   : 'Danger'
-                } %}
+                        <div class="form-group">
+                            <label class="control-label" for="basic-addon4">Addon at the end (button style)</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Recipient's username"
+                                       aria-describedby="basic-addon2">
+                                <a class="input-group-addon" id="basic-addon2">Submit</a>
+                            </div>
+                        </div>
 
-                <h2 class="template-styles__section__title">Colors</h2>
+                        <div class="form-group">
+                            <label class="control-label" for="basic-addon4">Addon at the start</label>
+                            <div class="input-group">
+                                <span class="input-group-addon" id="basic-addon3">https://example.com/users/</span>
+                                <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                            </div>
+                        </div>
 
-                <div class="template-styles__section__body">
+                        <div class="form-group">
+                            <label class="control-label" for="basic-addon4">Two in one?! Amazing!</label>
+                            <div class="input-group">
+                                <span class="input-group-addon">$</span>
+                                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                                <span class="input-group-addon">.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-                    {% for key, label in colors %}
-                        {% include "ClientWebsiteBundle:components:color_swatch.html.twig" with {
-                        'key' : key,
-                        'label' : label
-                        } %}
-                    {% endfor %}
+                <section class="template-styles__section container" id="forms">
+                    <h2 class="template-styles__section__title">Forms</h2>
+                    <div class="template-styles__section__body">
 
-                </div>
+                        <div class="row">
+                            <form class="col-sm-4">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Email address</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Password</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputFile">File input</label>
+                                    <input type="file" id="exampleInputFile">
+                                    <p class="help-block">Example block-level help text here.</p>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"> Check me out
+                                    </label>
+                                </div>
+                                <button type="submit" class="btn btn-default">Submit</button>
+                            </form>
 
-                <h3 class="template-styles__section__subtitle">Semantic Colors</h3>
+                        </div>
 
-                <div class="template-styles__section__body">
+                        <h3 class="template-styles__section__subtitle">Inline Form</h3>
 
-                    {% for key, label in semantic_colors %}
-                        {% include "ClientWebsiteBundle:components:color_swatch.html.twig" with {
-                        'key' : key,
-                        'label' : label
-                        } %}
-                    {% endfor %}
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <label for="exampleInputName2">Name</label>
+                                <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail2">Email</label>
+                                <input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
+                            </div>
+                            <button type="submit" class="btn btn-default">Send invitation</button>
+                        </form>
 
-                </div>
-            </section>
+                        <h3 class="template-styles__section__subtitle">Horizontal Form</h3>
 
-            <section class="template-styles__section container" id="lists">
-                <h2 class="template-styles__section__title">Lists</h2>
-                <div class="template-styles__section__body">
+                        <div class="row">
+                            <form class="form-horizontal col-sm-6">
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                                    <div class="col-sm-10">
+                                        <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <div class="checkbox">
+                                            <label class="control-label">
+                                                <input type="checkbox"> Remember me
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <button type="submit" class="btn btn-default">Sign in</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
 
-                    <h3 class="template-styles__section__subtitle">Unordered List</h3>
-                    <ul>
-                        <li>Then, advancing obliquely towards us, came a fifth</li>
+                <section class="template-styles__section container" id="tables">
+                    <h2 class="template-styles__section__title">Tables</h2>
+                    <div class="template-styles__section__body">
+                        <table class="table table-responsive">
+                            <thead>
+                            <th>English</th>
+                            <th>French</th>
+                            <th>German</th>
+                            <th>Spanish</th>
+                            </thead>
+                            <tr>
+                                <td>One</td>
+                                <td>Un</td>
+                                <td>Eins</td>
+                                <td>Uno</td>
+                            </tr>
+                            <tr>
+                                <td>Two</td>
+                                <td>Deux</td>
+                                <td>Zwei</td>
+                                <td>Uno</td>
+                            </tr>
+                            <tr>
+                                <td>Three</td>
+                                <td>Trois</td>
+                                <td>Drei</td>
+                                <td>Tres</td>
+                            </tr>
+                        </table>
 
-                        <li> Their armoured bodies glittered in the sun as they swept swiftly forward upon the guns, growing rapidly larger as they drew nearer</li>
+                        <h3 class="template-styles__section__subtitle">Stripped Table</h3>
 
-                        <li> One on the extreme left, the remotest that is, flourished a huge case high in the air, and the ghostly, terrible Heat-Ray I had already seen on Friday night smote towards Chertsey, and struck the town</li>
+                        <table class="table table-responsive table-striped">
+                            <thead>
+                            <th>English</th>
+                            <th>French</th>
+                            <th>German</th>
+                            <th>Spanish</th>
+                            </thead>
+                            <tr>
+                                <td>One</td>
+                                <td>Un</td>
+                                <td>Eins</td>
+                                <td>Uno</td>
+                            </tr>
+                            <tr>
+                                <td>Two</td>
+                                <td>Deux</td>
+                                <td>Zwei</td>
+                                <td>Uno</td>
+                            </tr>
+                            <tr>
+                                <td>Three</td>
+                                <td>Trois</td>
+                                <td>Drei</td>
+                                <td>Tres</td>
+                            </tr>
+                        </table>
 
-                        <li> At sight of these strange, swift, and terrible creatures the crowd near the water's edge seemed to me to be for a moment horror-struck</li>
+                        <h3 class="template-styles__section__subtitle">Hover Table</h3>
+                        <table class="table table-responsive table-hover">
+                            <thead>
+                            <th>English</th>
+                            <th>French</th>
+                            <th>German</th>
+                            <th>Spanish</th>
+                            </thead>
+                            <tr>
+                                <td>One</td>
+                                <td>Un</td>
+                                <td>Eins</td>
+                                <td>Uno</td>
+                            </tr>
+                            <tr>
+                                <td>Two</td>
+                                <td>Deux</td>
+                                <td>Zwei</td>
+                                <td>Uno</td>
+                            </tr>
+                            <tr>
+                                <td>Three</td>
+                                <td>Trois</td>
+                                <td>Drei</td>
+                                <td>Tres</td>
+                            </tr>
+                        </table>
 
-                        <li>
-                            <ul>
-                                <li> There was no screaming or shouting, but a silence</li>
+                        <h3 class="template-styles__section__subtitle">Table Classes</h3>
+                        <table class="table table-responsive table-hover">
+                            <thead>
+                            <th>English</th>
+                            <th>French</th>
+                            <th>German</th>
+                            <th>Spanish</th>
+                            </thead>
+                            <tr class="active">
+                                <td>active</td>
+                                <td>actif</td>
+                                <td>aktive</td>
+                                <td>éxito</td>
+                            </tr>
+                            <tr class="success">
+                                <td>success</td>
+                                <td>succès</td>
+                                <td>erfolg</td>
+                                <td>activo</td>
+                            </tr>
+                            <tr class="info">
+                                <td>info</td>
+                                <td>infos</td>
+                                <td>info</td>
+                                <td>info</td>
+                            </tr>
+                            <tr class="warning">
+                                <td>warning</td>
+                                <td>avertissement</td>
+                                <td>warnende</td>
+                                <td>aviso</td>
+                            </tr>
+                            <tr class="danger">
+                                <td>danger</td>
+                                <td>danger</td>
+                                <td>gefahr</td>
+                                <td>peligro</td>
+                            </tr>
+                        </table>
+                    </div>
+                </section>
 
-                                <li> Then a hoarse murmur and a movement of feet--a splashing from the water</li>
+                <section class="template-styles__section container" id="colors">
+                    {% set colors = {
+                    'green'            : 'Green',
+                    'blue'            : 'Blue',
+                    'blue-light'            : 'Light Blue',
+                    'red'            : 'Red',
+                    'orange'            : 'Orange',
+                    'black'            : 'Black',
+                    'gray-lighter'   : 'Lighter Gray',
+                    'gray-light'     : 'Light Gray',
+                    'gray'           : 'Gray',
+                    'gray-dark'      : 'Dark Gray',
+                    'gray-darker'    : 'Darker Gray',
+                    } %}
 
-                                <li> A man, too frightened to drop the portmanteau he carried on his shoulder, swung round and sent me staggering with a blow from the corner of his burden</li>
+                    {% set semantic_colors = {
+                    'brand-primary'   : 'Primary',
+                    'brand-success'   : 'Success',
+                    'brand-info'   : 'Info',
+                    'brand-warning'   : 'Warning',
+                    'brand-danger'   : 'Danger'
+                    } %}
 
-                                <li> A woman thrust at me with her hand and rushed past me</li>
+                    <h2 class="template-styles__section__title">Colors</h2>
 
-                                <li> I turned with the rush of the people, but I was not too terrified for thought</li>
+                    <div class="template-styles__section__body">
 
-                                <li> The terrible Heat-Ray was in my mind</li>
-                            </ul>
-                        </li>
+                        {% for key, label in colors %}
+                            {% include "ClientWebsiteBundle:components:color_swatch.html.twig" with {
+                            'key' : key,
+                            'label' : label
+                            } %}
+                        {% endfor %}
 
-                        <li> To get under water! That was it! "Get under water!" I shouted, unheeded</li>
+                    </div>
 
-                        <li> I faced about again, and rushed towards the approaching Martian, rushed right down the gravelly beach and headlong into the water</li>
+                    <h3 class="template-styles__section__subtitle">Semantic Colors</h3>
 
-                        <li> Others did the same</li>
-                    </ul>
+                    <div class="template-styles__section__body">
 
-                    <h3 class="template-styles__section__subtitle">Ordered List</h3>
-                    <ol>
-                        <li>Then, advancing obliquely towards us, came a fifth</li>
+                        {% for key, label in semantic_colors %}
+                            {% include "ClientWebsiteBundle:components:color_swatch.html.twig" with {
+                            'key' : key,
+                            'label' : label
+                            } %}
+                        {% endfor %}
 
-                        <li> Their armoured bodies glittered in the sun as they swept swiftly forward upon the guns, growing rapidly larger as they drew nearer</li>
+                    </div>
+                </section>
 
-                        <li> One on the extreme left, the remotest that is, flourished a huge case high in the air, and the ghostly, terrible Heat-Ray I had already seen on Friday night smote towards Chertsey, and struck the town</li>
+                <section class="template-styles__section container" id="lists">
+                    <h2 class="template-styles__section__title">Lists</h2>
+                    <div class="template-styles__section__body">
 
-                        <li> At sight of these strange, swift, and terrible creatures the crowd near the water's edge seemed to me to be for a moment horror-struck</li>
+                        <h3 class="template-styles__section__subtitle">Unordered List</h3>
+                        <ul>
+                            <li>Then, advancing obliquely towards us, came a fifth</li>
 
-                        <li>
-                            <ul>
-                                <li> There was no screaming or shouting, but a silence</li>
+                            <li> Their armoured bodies glittered in the sun as they swept swiftly forward upon the guns, growing rapidly larger as they drew nearer</li>
 
-                                <li> Then a hoarse murmur and a movement of feet--a splashing from the water</li>
+                            <li> One on the extreme left, the remotest that is, flourished a huge case high in the air, and the ghostly, terrible Heat-Ray I had already seen on Friday night smote towards Chertsey, and struck the town</li>
 
-                                <li> A man, too frightened to drop the portmanteau he carried on his shoulder, swung round and sent me staggering with a blow from the corner of his burden</li>
+                            <li> At sight of these strange, swift, and terrible creatures the crowd near the water's edge seemed to me to be for a moment horror-struck</li>
 
-                                <li> A woman thrust at me with her hand and rushed past me</li>
+                            <li>
+                                <ul>
+                                    <li> There was no screaming or shouting, but a silence</li>
 
-                                <li> I turned with the rush of the people, but I was not too terrified for thought</li>
+                                    <li> Then a hoarse murmur and a movement of feet--a splashing from the water</li>
 
-                                <li> The terrible Heat-Ray was in my mind</li>
-                            </ul>
-                        </li>
+                                    <li> A man, too frightened to drop the portmanteau he carried on his shoulder, swung round and sent me staggering with a blow from the corner of his burden</li>
 
-                        <li> To get under water! That was it! "Get under water!" I shouted, unheeded</li>
+                                    <li> A woman thrust at me with her hand and rushed past me</li>
 
-                        <li> I faced about again, and rushed towards the approaching Martian, rushed right down the gravelly beach and headlong into the water</li>
+                                    <li> I turned with the rush of the people, but I was not too terrified for thought</li>
 
-                        <li> Others did the same</li>
-                    </ol>
+                                    <li> The terrible Heat-Ray was in my mind</li>
+                                </ul>
+                            </li>
 
-                    <h3 class="template-styles__section__subtitle">Unstyled List</h3>
-                    <ul class="list-unstyled">
-                        <li>Then, advancing obliquely towards us, came a fifth</li>
+                            <li> To get under water! That was it! "Get under water!" I shouted, unheeded</li>
 
-                        <li> Their armoured bodies glittered in the sun as they swept swiftly forward upon the guns, growing rapidly larger as they drew nearer</li>
+                            <li> I faced about again, and rushed towards the approaching Martian, rushed right down the gravelly beach and headlong into the water</li>
 
-                        <li> One on the extreme left, the remotest that is, flourished a huge case high in the air, and the ghostly, terrible Heat-Ray I had already seen on Friday night smote towards Chertsey, and struck the town</li>
+                            <li> Others did the same</li>
+                        </ul>
 
-                        <li> At sight of these strange, swift, and terrible creatures the crowd near the water's edge seemed to me to be for a moment horror-struck</li>
+                        <h3 class="template-styles__section__subtitle">Ordered List</h3>
+                        <ol>
+                            <li>Then, advancing obliquely towards us, came a fifth</li>
 
-                        <li>
-                            <ul>
-                                <li> There was no screaming or shouting, but a silence</li>
+                            <li> Their armoured bodies glittered in the sun as they swept swiftly forward upon the guns, growing rapidly larger as they drew nearer</li>
 
-                                <li> Then a hoarse murmur and a movement of feet--a splashing from the water</li>
+                            <li> One on the extreme left, the remotest that is, flourished a huge case high in the air, and the ghostly, terrible Heat-Ray I had already seen on Friday night smote towards Chertsey, and struck the town</li>
 
-                                <li> A man, too frightened to drop the portmanteau he carried on his shoulder, swung round and sent me staggering with a blow from the corner of his burden</li>
+                            <li> At sight of these strange, swift, and terrible creatures the crowd near the water's edge seemed to me to be for a moment horror-struck</li>
 
-                                <li> A woman thrust at me with her hand and rushed past me</li>
+                            <li>
+                                <ul>
+                                    <li> There was no screaming or shouting, but a silence</li>
 
-                                <li> I turned with the rush of the people, but I was not too terrified for thought</li>
+                                    <li> Then a hoarse murmur and a movement of feet--a splashing from the water</li>
 
-                                <li> The terrible Heat-Ray was in my mind</li>
-                            </ul>
-                        </li>
+                                    <li> A man, too frightened to drop the portmanteau he carried on his shoulder, swung round and sent me staggering with a blow from the corner of his burden</li>
 
-                        <li> To get under water! That was it! "Get under water!" I shouted, unheeded</li>
+                                    <li> A woman thrust at me with her hand and rushed past me</li>
 
-                        <li> I faced about again, and rushed towards the approaching Martian, rushed right down the gravelly beach and headlong into the water</li>
+                                    <li> I turned with the rush of the people, but I was not too terrified for thought</li>
 
-                        <li> Others did the same</li>
-                    </ul>
+                                    <li> The terrible Heat-Ray was in my mind</li>
+                                </ul>
+                            </li>
 
-                    <h3 class="template-styles__section__subtitle">Inline List</h3>
-                    <ul class="list-inline">
-                        <li>Lorem ipsum</li>
-                        <li>Phasellus iaculis</li>
-                        <li>Nulla volutpat</li>
-                    </ul>
+                            <li> To get under water! That was it! "Get under water!" I shouted, unheeded</li>
 
-                    <h3 class="template-styles__section__subtitle">Description List</h3>
-                    <dl>
-                        <dt>Description lists</dt>
-                        <dd>A description list is perfect for defining terms.</dd>
-                        <dt>Euismod</dt>
-                        <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
-                        <dd>Donec id elit non mi porta gravida at eget metus.</dd>
-                        <dt>Malesuada porta</dt>
-                        <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
-                    </dl>
+                            <li> I faced about again, and rushed towards the approaching Martian, rushed right down the gravelly beach and headlong into the water</li>
 
-                    <h3 class="template-styles__section__subtitle">Horizontal Description List</h3>
-                    <dl class="dl-horizontal">
-                        <dt>Description lists</dt>
-                        <dd>A description list is perfect for defining terms.</dd>
-                        <dt>Euismod</dt>
-                        <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
-                        <dd>Donec id elit non mi porta gravida at eget metus.</dd>
-                        <dt>Malesuada porta</dt>
-                        <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
-                    </dl>
-                </div>
-            </section>
+                            <li> Others did the same</li>
+                        </ol>
 
-            <section class="template-styles__section container" id="list-groups">
-                <h2 class="template-styles__section__title">List Groups</h2>
-                <div class="template-styles__section__body">
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <span class="badge">136</span> Cras justo odio
-                        </li>
-                        <li class="list-group-item"><span class="badge">14</span> Dapibus ac facilisis in</li>
-                        <li class="list-group-item"><span class="badge">7</span> Morbi leo risus</li>
-                        <li class="list-group-item"><span
-                                    class="badge">7</span> Ahab stolidly turned aside; then said to
-                            Mayhew, "Captain, I have just bethought me of my letter-bag; there is a letter for one of thy
-                            officers, if I mistake not
-                        </li>
-                        <li class="list-group-item active"><span class="badge">7</span>Active Group Item</li>
-                        <li class="list-group-item">Every whale-ship takes out a goodly number of letters for various ships,
-                            whose delivery to the persons to whom they may be addressed, depends upon the mere chance of
-                            encountering them in the four oceans
-                        </li>
-                        <li class="list-group-item list-group-item-success"><span
-                                    class="badge">7</span>Success Group Item
-                        </li>
-                        <li class="list-group-item list-group-item-info"><span class="badge">7</span>Info Group Item
-                        </li>
-                        <li class="list-group-item list-group-item-warning"><span
-                                    class="badge">7</span>Warning Group Item
-                        </li>
-                        <li class="list-group-item list-group-item-danger"><span class="badge">7</span>Danger Group Item
-                        </li>
-                    </ul>
-                </div>
-            </section>
+                        <h3 class="template-styles__section__subtitle">Unstyled List</h3>
+                        <ul class="list-unstyled">
+                            <li>Then, advancing obliquely towards us, came a fifth</li>
 
-            <section class="template-styles__section container" id="code">
-                <h2 class="template-styles__section__title">Code</h2>
-                <div class="template-styles__section__body">
+                            <li> Their armoured bodies glittered in the sun as they swept swiftly forward upon the guns, growing rapidly larger as they drew nearer</li>
 
-                    <p>Inline code should be written using the <code>&lt;code&gt;</code> tag, for example
-                        <code>alert('hello world!');</code></p>
+                            <li> One on the extreme left, the remotest that is, flourished a huge case high in the air, and the ghostly, terrible Heat-Ray I had already seen on Friday night smote towards Chertsey, and struck the town</li>
 
-                    <h3 class="template-styles__section__subtitle">Pre Tags (Multiline Code)</h3>
-                    <pre>
+                            <li> At sight of these strange, swift, and terrible creatures the crowd near the water's edge seemed to me to be for a moment horror-struck</li>
+
+                            <li>
+                                <ul>
+                                    <li> There was no screaming or shouting, but a silence</li>
+
+                                    <li> Then a hoarse murmur and a movement of feet--a splashing from the water</li>
+
+                                    <li> A man, too frightened to drop the portmanteau he carried on his shoulder, swung round and sent me staggering with a blow from the corner of his burden</li>
+
+                                    <li> A woman thrust at me with her hand and rushed past me</li>
+
+                                    <li> I turned with the rush of the people, but I was not too terrified for thought</li>
+
+                                    <li> The terrible Heat-Ray was in my mind</li>
+                                </ul>
+                            </li>
+
+                            <li> To get under water! That was it! "Get under water!" I shouted, unheeded</li>
+
+                            <li> I faced about again, and rushed towards the approaching Martian, rushed right down the gravelly beach and headlong into the water</li>
+
+                            <li> Others did the same</li>
+                        </ul>
+
+                        <h3 class="template-styles__section__subtitle">Inline List</h3>
+                        <ul class="list-inline">
+                            <li>Lorem ipsum</li>
+                            <li>Phasellus iaculis</li>
+                            <li>Nulla volutpat</li>
+                        </ul>
+
+                        <h3 class="template-styles__section__subtitle">Description List</h3>
+                        <dl>
+                            <dt>Description lists</dt>
+                            <dd>A description list is perfect for defining terms.</dd>
+                            <dt>Euismod</dt>
+                            <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+                            <dd>Donec id elit non mi porta gravida at eget metus.</dd>
+                            <dt>Malesuada porta</dt>
+                            <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+                        </dl>
+
+                        <h3 class="template-styles__section__subtitle">Horizontal Description List</h3>
+                        <dl class="dl-horizontal">
+                            <dt>Description lists</dt>
+                            <dd>A description list is perfect for defining terms.</dd>
+                            <dt>Euismod</dt>
+                            <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+                            <dd>Donec id elit non mi porta gravida at eget metus.</dd>
+                            <dt>Malesuada porta</dt>
+                            <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+                        </dl>
+                    </div>
+                </section>
+
+                <section class="template-styles__section container" id="list-groups">
+                    <h2 class="template-styles__section__title">List Groups</h2>
+                    <div class="template-styles__section__body">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <span class="badge">136</span> Cras justo odio
+                            </li>
+                            <li class="list-group-item"><span class="badge">14</span> Dapibus ac facilisis in</li>
+                            <li class="list-group-item"><span class="badge">7</span> Morbi leo risus</li>
+                            <li class="list-group-item"><span
+                                        class="badge">7</span> Ahab stolidly turned aside; then said to
+                                Mayhew, "Captain, I have just bethought me of my letter-bag; there is a letter for one of thy
+                                officers, if I mistake not
+                            </li>
+                            <li class="list-group-item active"><span class="badge">7</span>Active Group Item</li>
+                            <li class="list-group-item">Every whale-ship takes out a goodly number of letters for various ships,
+                                whose delivery to the persons to whom they may be addressed, depends upon the mere chance of
+                                encountering them in the four oceans
+                            </li>
+                            <li class="list-group-item list-group-item-success"><span
+                                        class="badge">7</span>Success Group Item
+                            </li>
+                            <li class="list-group-item list-group-item-info"><span class="badge">7</span>Info Group Item
+                            </li>
+                            <li class="list-group-item list-group-item-warning"><span
+                                        class="badge">7</span>Warning Group Item
+                            </li>
+                            <li class="list-group-item list-group-item-danger"><span class="badge">7</span>Danger Group Item
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="template-styles__section container" id="code">
+                    <h2 class="template-styles__section__title">Code</h2>
+                    <div class="template-styles__section__body">
+
+                        <p>Inline code should be written using the <code>&lt;code&gt;</code> tag, for example
+                            <code>alert('hello world!');</code></p>
+
+                        <h3 class="template-styles__section__subtitle">Pre Tags (Multiline Code)</h3>
+                        <pre>
 // Longer code snippets should use the &lt;pre&gt; tag
 function hello() {
     alert('hello world!');
 }
                     </pre>
-                </div>
-            </section>
+                    </div>
+                </section>
 
-            <section class="template-styles__section container" id="paragraphs">
-                <h2 class="template-styles__section__title">Paragraphs</h2>
-                <div class="template-styles__section__body">
-                    <p>Then, <strong>advancing obliquely towards us</strong>, came a fifth. Their armoured bodies
+                <section class="template-styles__section container" id="paragraphs">
+                    <h2 class="template-styles__section__title">Paragraphs</h2>
+                    <div class="template-styles__section__body">
+                        <p>Then, <strong>advancing obliquely towards us</strong>, came a fifth. Their armoured bodies
+                            <em>glittered in the sun</em> as they swept <a href="#">swiftly forward</a> upon the guns,
+                            <mark>growing rapidly larger</mark> as they <del>drew nearer</del>. One on the
+                            <strike>extreme left</strike>, <small>the remotest that is</small>, <a href="#">flourished a
+                            <strong>huge case <em>high in</em></strong> the air, and the <em>ghostly</em>, terrible Heat-Ray</a> I had already seen on Friday night smote towards Chertsey, and struck the town.
+                        </p>
+
+                        <p>At sight of these strange, swift, and terrible creatures the crowd near the water's edge seemed to me to be for a moment horror-struck. There was no screaming or shouting, but a silence. Then a hoarse murmur and a movement of feet--a splashing from the water. A man, too frightened to drop the portmanteau he carried on his shoulder, swung round and sent me staggering with a blow from the corner of his burden. A woman thrust at me with her hand and rushed past me. I turned with the rush of the people, but I was not too terrified for thought. The terrible Heat-Ray was in my mind. To get under water! That was it!</p>
+
+                        <p>"Get under water!" I shouted, unheeded.</p>
+
+                        <p>I faced about again, and rushed towards the approaching Martian, rushed right down the gravelly beach and headlong into the water. Others did the same. A boatload of people putting back came leaping out as I rushed past. The stones under my feet were muddy and slippery, and the river was so low that I ran perhaps twenty feet scarcely waist-deep. Then, as the Martian towered overhead scarcely a couple of hundred yards away, I flung myself forward under the surface. The splashes of the people in the boats leaping into the river sounded like thunderclaps in my ears. People were landing hastily on both sides of the river. But the Martian machine took no more notice for the moment of the people running this way and that than a man would of the confusion of ants in a nest against which his foot has kicked. When, half suffocated, I raised my head above water, the Martian's hood pointed at the batteries that were still firing across the river, and as it advanced it swung loose what must have been the generator of the Heat-Ray.</p>
+                    </div>
+
+                    <h3 class="template-styles__section__subtitle">Lead Paragraph</h3>
+                    <p class="lead">Then,
+                        <strong>advancing obliquely towards us</strong>, came a fifth. Their armoured bodies
                         <em>glittered in the sun</em> as they swept <a href="#">swiftly forward</a> upon the guns,
                         <mark>growing rapidly larger</mark> as they <del>drew nearer</del>. One on the
                         <strike>extreme left</strike>, <small>the remotest that is</small>, <a href="#">flourished a
-                        <strong>huge case <em>high in</em></strong> the air, and the <em>ghostly</em>, terrible Heat-Ray</a> I had already seen on Friday night smote towards Chertsey, and struck the town.
+                        <strong>huge case <em>high in</em></strong> the air, and the
+                        <em>ghostly</em>, terrible Heat-Ray</a> I had already seen on Friday night smote towards Chertsey, and struck the town.
                     </p>
 
                     <p>At sight of these strange, swift, and terrible creatures the crowd near the water's edge seemed to me to be for a moment horror-struck. There was no screaming or shouting, but a silence. Then a hoarse murmur and a movement of feet--a splashing from the water. A man, too frightened to drop the portmanteau he carried on his shoulder, swung round and sent me staggering with a blow from the corner of his burden. A woman thrust at me with her hand and rushed past me. I turned with the rush of the people, but I was not too terrified for thought. The terrible Heat-Ray was in my mind. To get under water! That was it!</p>
@@ -893,66 +1113,49 @@ function hello() {
                     <p>"Get under water!" I shouted, unheeded.</p>
 
                     <p>I faced about again, and rushed towards the approaching Martian, rushed right down the gravelly beach and headlong into the water. Others did the same. A boatload of people putting back came leaping out as I rushed past. The stones under my feet were muddy and slippery, and the river was so low that I ran perhaps twenty feet scarcely waist-deep. Then, as the Martian towered overhead scarcely a couple of hundred yards away, I flung myself forward under the surface. The splashes of the people in the boats leaping into the river sounded like thunderclaps in my ears. People were landing hastily on both sides of the river. But the Martian machine took no more notice for the moment of the people running this way and that than a man would of the confusion of ants in a nest against which his foot has kicked. When, half suffocated, I raised my head above water, the Martian's hood pointed at the batteries that were still firing across the river, and as it advanced it swung loose what must have been the generator of the Heat-Ray.</p>
-                </div>
 
-                <h3 class="template-styles__section__subtitle">Lead Paragraph</h3>
-                <p class="lead">Then,
-                    <strong>advancing obliquely towards us</strong>, came a fifth. Their armoured bodies
-                    <em>glittered in the sun</em> as they swept <a href="#">swiftly forward</a> upon the guns,
-                    <mark>growing rapidly larger</mark> as they <del>drew nearer</del>. One on the
-                    <strike>extreme left</strike>, <small>the remotest that is</small>, <a href="#">flourished a
-                    <strong>huge case <em>high in</em></strong> the air, and the
-                    <em>ghostly</em>, terrible Heat-Ray</a> I had already seen on Friday night smote towards Chertsey, and struck the town.
-                </p>
+                    <h3 class="template-styles__section__subtitle">Block Quotes</h3>
 
-                <p>At sight of these strange, swift, and terrible creatures the crowd near the water's edge seemed to me to be for a moment horror-struck. There was no screaming or shouting, but a silence. Then a hoarse murmur and a movement of feet--a splashing from the water. A man, too frightened to drop the portmanteau he carried on his shoulder, swung round and sent me staggering with a blow from the corner of his burden. A woman thrust at me with her hand and rushed past me. I turned with the rush of the people, but I was not too terrified for thought. The terrible Heat-Ray was in my mind. To get under water! That was it!</p>
+                    <p>At sight of these strange, swift, and terrible creatures the crowd near the water's edge seemed to me to be for a moment horror-struck. There was no screaming or shouting, but a silence. Then a hoarse murmur and a movement of feet--a splashing from the water. A man, too frightened to drop the portmanteau he carried on his shoulder, swung round and sent me staggering with a blow from the corner of his burden. A woman thrust at me with her hand and rushed past me. I turned with the rush of the people, but I was not too terrified for thought. The terrible Heat-Ray was in my mind. To get under water! That was it!</p>
+                    <blockquote>
+                        <p><strong>Block Quote:</strong> Then,
+                            <strong>advancing obliquely towards us</strong>, came a fifth. Their armoured bodies
+                            <em>glittered in the sun</em> as they swept <a href="#">swiftly forward</a> upon the guns,
+                            <mark>growing rapidly larger</mark> as they <del>drew nearer</del>. One on the
+                            <strike>extreme left</strike>, <small>the remotest that is</small>, <a href="#">flourished a
+                            <strong>huge case <em>high in</em></strong> the air, and the <em>ghostly</em>, terrible Heat-Ray</a> I had already seen on Friday night smote towards Chertsey, and struck the town.
+                        </p>
+                        <footer>H. G. Wells, <cite title="Source Title">The War of the Worlds</cite></footer>
+                    </blockquote>
 
-                <p>"Get under water!" I shouted, unheeded.</p>
+                    <p>I faced about again, and rushed towards the approaching Martian, rushed right down the gravelly beach and headlong into the water. Others did the same. A boatload of people putting back came leaping out as I rushed past. The stones under my feet were muddy and slippery, and the river was so low that I ran perhaps twenty feet scarcely waist-deep. Then, as the Martian towered overhead scarcely a couple of hundred yards away, I flung myself forward under the surface. The splashes of the people in the boats leaping into the river sounded like thunderclaps in my ears. People were landing hastily on both sides of the river. But the Martian machine took no more notice for the moment of the people running this way and that than a man would of the confusion of ants in a nest against which his foot has kicked. When, half suffocated, I raised my head above water, the Martian's hood pointed at the batteries that were still firing across the river, and as it advanced it swung loose what must have been the generator of the Heat-Ray.</p>
 
-                <p>I faced about again, and rushed towards the approaching Martian, rushed right down the gravelly beach and headlong into the water. Others did the same. A boatload of people putting back came leaping out as I rushed past. The stones under my feet were muddy and slippery, and the river was so low that I ran perhaps twenty feet scarcely waist-deep. Then, as the Martian towered overhead scarcely a couple of hundred yards away, I flung myself forward under the surface. The splashes of the people in the boats leaping into the river sounded like thunderclaps in my ears. People were landing hastily on both sides of the river. But the Martian machine took no more notice for the moment of the people running this way and that than a man would of the confusion of ants in a nest against which his foot has kicked. When, half suffocated, I raised my head above water, the Martian's hood pointed at the batteries that were still firing across the river, and as it advanced it swung loose what must have been the generator of the Heat-Ray.</p>
-
-                <h3 class="template-styles__section__subtitle">Block Quotes</h3>
-
-                <p>At sight of these strange, swift, and terrible creatures the crowd near the water's edge seemed to me to be for a moment horror-struck. There was no screaming or shouting, but a silence. Then a hoarse murmur and a movement of feet--a splashing from the water. A man, too frightened to drop the portmanteau he carried on his shoulder, swung round and sent me staggering with a blow from the corner of his burden. A woman thrust at me with her hand and rushed past me. I turned with the rush of the people, but I was not too terrified for thought. The terrible Heat-Ray was in my mind. To get under water! That was it!</p>
-                <blockquote>
-                    <p><strong>Block Quote:</strong> Then,
-                        <strong>advancing obliquely towards us</strong>, came a fifth. Their armoured bodies
-                        <em>glittered in the sun</em> as they swept <a href="#">swiftly forward</a> upon the guns,
-                        <mark>growing rapidly larger</mark> as they <del>drew nearer</del>. One on the
-                        <strike>extreme left</strike>, <small>the remotest that is</small>, <a href="#">flourished a
-                        <strong>huge case <em>high in</em></strong> the air, and the <em>ghostly</em>, terrible Heat-Ray</a> I had already seen on Friday night smote towards Chertsey, and struck the town.
-                    </p>
-                    <footer>H. G. Wells, <cite title="Source Title">The War of the Worlds</cite></footer>
-                </blockquote>
-
-                <p>I faced about again, and rushed towards the approaching Martian, rushed right down the gravelly beach and headlong into the water. Others did the same. A boatload of people putting back came leaping out as I rushed past. The stones under my feet were muddy and slippery, and the river was so low that I ran perhaps twenty feet scarcely waist-deep. Then, as the Martian towered overhead scarcely a couple of hundred yards away, I flung myself forward under the surface. The splashes of the people in the boats leaping into the river sounded like thunderclaps in my ears. People were landing hastily on both sides of the river. But the Martian machine took no more notice for the moment of the people running this way and that than a man would of the confusion of ants in a nest against which his foot has kicked. When, half suffocated, I raised my head above water, the Martian's hood pointed at the batteries that were still firing across the river, and as it advanced it swung loose what must have been the generator of the Heat-Ray.</p>
-
-                <blockquote class="blockquote-reverse">
-                    <p>
-                        <strong>Reverse Block Quote:</strong> Then, advancing obliquely towards us, came a fifth. Their armoured bodies glittered in the sun as they swept swiftly forward upon the guns, growing rapidly larger as they drew nearer. One on the extreme left, the remotest that is, flourished a huge case high in the air, and the ghostly, terrible Heat-Ray I had already seen on Friday night smote towards Chertsey, and struck the town.
-                    </p>
-                    <footer>H. G. Wells, <cite title="Source Title">The War of the Worlds</cite></footer>
-                </blockquote>
+                    <blockquote class="blockquote-reverse">
+                        <p>
+                            <strong>Reverse Block Quote:</strong> Then, advancing obliquely towards us, came a fifth. Their armoured bodies glittered in the sun as they swept swiftly forward upon the guns, growing rapidly larger as they drew nearer. One on the extreme left, the remotest that is, flourished a huge case high in the air, and the ghostly, terrible Heat-Ray I had already seen on Friday night smote towards Chertsey, and struck the town.
+                        </p>
+                        <footer>H. G. Wells, <cite title="Source Title">The War of the Worlds</cite></footer>
+                    </blockquote>
 
 
-                <p>In another moment it was on the bank, and in a stride wading halfway across. The knees of its foremost legs bent at the farther bank, and in another moment it had raised itself to its full height again, close to the village of Shepperton. Forthwith the six guns which, unknown to anyone on the right bank, had been hidden behind the outskirts of that village, fired simultaneously. The sudden near concussion, the last close upon the first, made my heart jump. The monster was already raising the case generating the Heat-Ray as the first shell burst six yards above the hood.</p>
-            </section>
+                    <p>In another moment it was on the bank, and in a stride wading halfway across. The knees of its foremost legs bent at the farther bank, and in another moment it had raised itself to its full height again, close to the village of Shepperton. Forthwith the six guns which, unknown to anyone on the right bank, had been hidden behind the outskirts of that village, fired simultaneously. The sudden near concussion, the last close upon the first, made my heart jump. The monster was already raising the case generating the Heat-Ray as the first shell burst six yards above the hood.</p>
+                </section>
 
-            <section class="container template-styles__section" id="headings">
+                <section class="container template-styles__section" id="headings">
 
-                {% set heading_types = ['h1','h2','h3','h4','h5','h6'] %}
+                    {% set heading_types = ['h1','h2','h3','h4','h5','h6'] %}
 
-                <h2 class="template-styles__section__title">Headings</h2>
+                    <h2 class="template-styles__section__title">Headings</h2>
 
-                <div>
-                    {% for ht in heading_types %}
-                    <{{ ht }}>
+                    <div>
+                        {% for ht in heading_types %}
+                        <{{ ht }}>
                         <strong><u>{{ ht }}</u> :</strong> The <strong>quick</strong> <em>brown</em> <a href="#">fox jumps</a> over the <small>lazy</small> dog
                     </{{ ht }}>
                     {% endfor %}
-                </div>
+            </div>
 
-            </section>
+                </section>
 
         </div>
     </div>

@@ -8009,3 +8009,19 @@ button.close {
 .template-styles__section#colors .color-swatch--brand-danger .color-swatch__swatch {
   background: #d9534f;
 }
+
+.template-styles__dropdown-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.template-styles__dropdown-group > * {
+  margin-right: 15px;
+}
+
+.template-styles .btn {
+  text-transform: capitalize;
+}

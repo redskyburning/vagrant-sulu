@@ -67,4 +67,17 @@
       @include color-swatch-variant('brand-danger',$brand-danger);
     }
   }
+
+  &__dropdown-group {
+    display:flex;
+    flex-wrap:wrap;
+
+    > * {
+      margin-right:$site-padding;
+    }
+  }
+
+  .btn {
+    text-transform: capitalize;
+  }
 }

@@ -7899,6 +7899,7 @@ button.close {
 
 .template-styles__section__title, .template-styles__section__subtitle {
   border-bottom: 1px solid #777777;
+  margin-bottom: 30px;
 }
 
 .template-styles__section__title:not(:first-child), .template-styles__section__subtitle:not(:first-child) {
@@ -7908,12 +7909,10 @@ button.close {
 .template-styles__section__title {
   margin-top: 0;
   padding-bottom: 15px;
-  margin-bottom: 30px;
 }
 
 .template-styles__section__subtitle {
   padding-bottom: 7.5px;
-  margin-bottom: 15px;
 }
 
 .template-styles__section#colors .template-styles__section__body {

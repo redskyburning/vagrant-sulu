@@ -33,6 +33,28 @@ code : ' focus'
 
 {%  set icons = ['asterisk','plus','euro','eur','minus','cloud','envelope','pencil','glass','music','search','heart','star','star-empty','user','film','th-large','th','th-list','ok','remove','zoom-in','zoom-out','off','signal','cog','trash','home','file','time','road','download-alt','download','upload','inbox','play-circle','repeat','refresh','list-alt','lock','flag','headphones','volume-off','volume-down','volume-up','qrcode','barcode','tag','tags','book','bookmark','print','camera','font','bold','italic','text-height','text-width','align-left','align-center','align-right','align-justify','list','indent-left','indent-right','facetime-video','picture','map-marker','adjust','tint','edit','share','check','move','step-backward','fast-backward','backward','play','pause','stop','forward','fast-forward','step-forward','eject','chevron-left','chevron-right','plus-sign','minus-sign','remove-sign','ok-sign','question-sign','info-sign','screenshot','remove-circle','ok-circle','ban-circle','arrow-left','arrow-right','arrow-up','arrow-down','share-alt','resize-full','resize-small','exclamation-sign','gift','leaf','fire','eye-open','eye-close','warning-sign','plane','calendar','random','comment','magnet','chevron-up','chevron-down','retweet','shopping-cart','folder-close','folder-open','resize-vertical','resize-horizontal','hdd','bullhorn','bell','certificate','thumbs-up','thumbs-down','hand-right','hand-left','hand-up','hand-down','circle-arrow-right','circle-arrow-left','circle-arrow-up','circle-arrow-down','globe','wrench','tasks','filter','briefcase','fullscreen','dashboard','paperclip','heart-empty','link','phone','pushpin','usd','gbp','sort','sort-by-alphabet','sort-by-alphabet-alt','sort-by-order','sort-by-order-alt','sort-by-attributes','sort-by-attributes-alt','unchecked','expand','collapse-down','collapse-up','log-in','flash','log-out','new-window','record','save','open','saved','import','export','send','floppy-disk','floppy-saved','floppy-remove','floppy-save','floppy-open','credit-card','transfer','cutlery','header','compressed','earphone','phone-alt','tower','stats','sd-video','hd-video','subtitles','sound-stereo','sound-dolby','sound-5-1','sound-6-1','sound-7-1','copyright-mark','registration-mark','cloud-download','cloud-upload','tree-conifer','tree-deciduous','yen','jpy','ruble','rub'] %}
 
+{% set colors = {
+'green'            : 'Green',
+'blue'            : 'Blue',
+'blue-light'            : 'Light Blue',
+'red'            : 'Red',
+'orange'            : 'Orange',
+'black'            : 'Black',
+'gray-lighter'   : 'Lighter Gray',
+'gray-light'     : 'Light Gray',
+'gray'           : 'Gray',
+'gray-dark'      : 'Dark Gray',
+'gray-darker'    : 'Darker Gray',
+} %}
+
+{% set semantic_colors = {
+'brand-primary'   : 'Primary',
+'brand-success'   : 'Success',
+'brand-info'   : 'Info',
+'brand-warning'   : 'Warning',
+'brand-danger'   : 'Danger'
+} %}
+
 {% block meta %}{% include "ClientWebsiteBundle:blocks:meta.html.twig" %}{% endblock %}
 
 {% block content %}
@@ -44,15 +66,233 @@ code : ' focus'
 
             <div class="template-styles__content">
 
-                <section class="template-styles__section container" id="code">
-                    <h2 class="template-styles__section__title">Paragraphs</h2>
+                <section class="template-styles__section container" id="colors">
+
+                    <h2 class="template-styles__section__title">Colors</h2>
+
                     <div class="template-styles__section__body">
 
+                        {% for key, label in colors %}
+                            {% include "ClientWebsiteBundle:components:color_swatch.html.twig" with {
+                            'key' : key,
+                            'label' : label
+                            } %}
+                        {% endfor %}
+
+                    </div>
+
+                    <h3 class="template-styles__section__subtitle">Semantic Colors</h3>
+
+                    <div class="template-styles__section__body">
+
+                        {% for key, label in semantic_colors %}
+                            {% include "ClientWebsiteBundle:components:color_swatch.html.twig" with {
+                            'key' : key,
+                            'label' : label
+                            } %}
+                        {% endfor %}
 
                     </div>
                 </section>
 
-                <section class="template-styles__section container" id="code">
+                <section class="container template-styles__section" id="buttons">
+
+                    <h2 class="template-styles__section__title">Buttons</h2>
+
+                    {% for size in button_sizes %}
+
+                        {% if loop.first == false %}<h3
+                                class="template-styles__section__subtitle">{{ size.name }} Buttons</h3>{% endif %}
+                        <div>
+                            {% for bt in button_types %}
+                                <a href="#" class="btn btn{{ size.code }} btn-{{ bt }}">{{ bt }}</a>
+                            {% endfor %}
+                        </div>
+
+                    {% endfor %}
+
+                </section>
+
+                <section class="container template-styles__section" id="dropdowns">
+
+                    <h2 class="template-styles__section__title">Dropdowns</h2>
+
+                    <div class="template-styles__dropdown-group">
+                        {% for bt in button_types %}
+                            <div class="dropdown template-styles__dropdown">
+                                <button class="btn btn-{{ bt }} dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    {{ bt }}
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                </ul>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                    <h3 class="template-styles__section__subtitle">Dropups</h3>
+
+                    <div class="template-styles__dropdown-group">
+                        {% for bt in button_types %}
+                            <div class="dropup template-styles__dropup">
+                                <button class="btn btn-{{ bt }} dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    {{  bt }}
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                </ul>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                    <h3 class="template-styles__section__subtitle">Button Dropdowns</h3>
+
+                    <div class="template-styles__dropdown-group">
+                        {% for bt in button_types %}
+                            <!-- Single button -->
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-{{ bt }} dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    {{ bt }} <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                </ul>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                    <h3 class="template-styles__section__subtitle">Split Button Dropdowns</h3>
+
+                    <div class="template-styles__dropdown-group">
+                        {% for bt in button_types %}
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-{{ bt }}">{{ bt }}</button>
+                                <button type="button" class="btn btn-{{ bt }} dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                </ul>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                </section>
+
+                <section class="container template-styles__section" id="headings">
+
+                    {% set heading_types = ['h1','h2','h3','h4','h5','h6'] %}
+
+                    <h2 class="template-styles__section__title">Headings</h2>
+
+                    <div class="template-styles__section__body">
+                        {% for ht in heading_types %}
+                            <{{ ht }}>
+                                <strong><u>{{ ht }}</u> :</strong> The <strong>quick</strong> <em>brown</em> <a href="#">fox jumps</a> over the <small>lazy</small> dog
+                            </{{ ht }}>
+                        {% endfor %}
+                    </div>
+                </section>
+
+                <section class="template-styles__section container" id="paragraphs">
+                    <h2 class="template-styles__section__title">Paragraphs</h2>
+                    <div class="template-styles__section__body">
+                        <p>Then, <strong>advancing obliquely towards us</strong>, came a fifth. Their armoured bodies
+                            <em>glittered in the sun</em> as they swept <a href="#">swiftly forward</a> upon the guns,
+                            <mark>growing rapidly larger</mark> as they <del>drew nearer</del>. One on the
+                            <strike>extreme left</strike>, <small>the remotest that is</small>, <a href="#">flourished a
+                            <strong>huge case <em>high in</em></strong> the air, and the <em>ghostly</em>, terrible Heat-Ray</a> I had already seen on Friday night smote towards Chertsey, and struck the town.
+                        </p>
+
+                        <p>At sight of these strange, swift, and terrible creatures the crowd near the water's edge seemed to me to be for a moment horror-struck. There was no screaming or shouting, but a silence. Then a hoarse murmur and a movement of feet--a splashing from the water. A man, too frightened to drop the portmanteau he carried on his shoulder, swung round and sent me staggering with a blow from the corner of his burden. A woman thrust at me with her hand and rushed past me. I turned with the rush of the people, but I was not too terrified for thought. The terrible Heat-Ray was in my mind. To get under water! That was it!</p>
+
+                        <p>"Get under water!" I shouted, unheeded.</p>
+
+                        <p>I faced about again, and rushed towards the approaching Martian, rushed right down the gravelly beach and headlong into the water. Others did the same. A boatload of people putting back came leaping out as I rushed past. The stones under my feet were muddy and slippery, and the river was so low that I ran perhaps twenty feet scarcely waist-deep. Then, as the Martian towered overhead scarcely a couple of hundred yards away, I flung myself forward under the surface. The splashes of the people in the boats leaping into the river sounded like thunderclaps in my ears. People were landing hastily on both sides of the river. But the Martian machine took no more notice for the moment of the people running this way and that than a man would of the confusion of ants in a nest against which his foot has kicked. When, half suffocated, I raised my head above water, the Martian's hood pointed at the batteries that were still firing across the river, and as it advanced it swung loose what must have been the generator of the Heat-Ray.</p>
+                    </div>
+
+                    <h3 class="template-styles__section__subtitle">Lead Paragraph</h3>
+                    <p class="lead">Then,
+                        <strong>advancing obliquely towards us</strong>, came a fifth. Their armoured bodies
+                        <em>glittered in the sun</em> as they swept <a href="#">swiftly forward</a> upon the guns,
+                        <mark>growing rapidly larger</mark> as they <del>drew nearer</del>. One on the
+                        <strike>extreme left</strike>, <small>the remotest that is</small>, <a href="#">flourished a
+                        <strong>huge case <em>high in</em></strong> the air, and the
+                        <em>ghostly</em>, terrible Heat-Ray</a> I had already seen on Friday night smote towards Chertsey, and struck the town.
+                    </p>
+
+                    <p>At sight of these strange, swift, and terrible creatures the crowd near the water's edge seemed to me to be for a moment horror-struck. There was no screaming or shouting, but a silence. Then a hoarse murmur and a movement of feet--a splashing from the water. A man, too frightened to drop the portmanteau he carried on his shoulder, swung round and sent me staggering with a blow from the corner of his burden. A woman thrust at me with her hand and rushed past me. I turned with the rush of the people, but I was not too terrified for thought. The terrible Heat-Ray was in my mind. To get under water! That was it!</p>
+
+                    <p>"Get under water!" I shouted, unheeded.</p>
+
+                    <p>I faced about again, and rushed towards the approaching Martian, rushed right down the gravelly beach and headlong into the water. Others did the same. A boatload of people putting back came leaping out as I rushed past. The stones under my feet were muddy and slippery, and the river was so low that I ran perhaps twenty feet scarcely waist-deep. Then, as the Martian towered overhead scarcely a couple of hundred yards away, I flung myself forward under the surface. The splashes of the people in the boats leaping into the river sounded like thunderclaps in my ears. People were landing hastily on both sides of the river. But the Martian machine took no more notice for the moment of the people running this way and that than a man would of the confusion of ants in a nest against which his foot has kicked. When, half suffocated, I raised my head above water, the Martian's hood pointed at the batteries that were still firing across the river, and as it advanced it swung loose what must have been the generator of the Heat-Ray.</p>
+
+                    <h3 class="template-styles__section__subtitle">Block Quotes</h3>
+
+                    <p>At sight of these strange, swift, and terrible creatures the crowd near the water's edge seemed to me to be for a moment horror-struck. There was no screaming or shouting, but a silence. Then a hoarse murmur and a movement of feet--a splashing from the water. A man, too frightened to drop the portmanteau he carried on his shoulder, swung round and sent me staggering with a blow from the corner of his burden. A woman thrust at me with her hand and rushed past me. I turned with the rush of the people, but I was not too terrified for thought. The terrible Heat-Ray was in my mind. To get under water! That was it!</p>
+                    <blockquote>
+                        <p><strong>Block Quote:</strong> Then,
+                            <strong>advancing obliquely towards us</strong>, came a fifth. Their armoured bodies
+                            <em>glittered in the sun</em> as they swept <a href="#">swiftly forward</a> upon the guns,
+                            <mark>growing rapidly larger</mark> as they <del>drew nearer</del>. One on the
+                            <strike>extreme left</strike>, <small>the remotest that is</small>, <a href="#">flourished a
+                            <strong>huge case <em>high in</em></strong> the air, and the <em>ghostly</em>, terrible Heat-Ray</a> I had already seen on Friday night smote towards Chertsey, and struck the town.
+                        </p>
+                        <footer>H. G. Wells, <cite title="Source Title">The War of the Worlds</cite></footer>
+                    </blockquote>
+
+                    <p>I faced about again, and rushed towards the approaching Martian, rushed right down the gravelly beach and headlong into the water. Others did the same. A boatload of people putting back came leaping out as I rushed past. The stones under my feet were muddy and slippery, and the river was so low that I ran perhaps twenty feet scarcely waist-deep. Then, as the Martian towered overhead scarcely a couple of hundred yards away, I flung myself forward under the surface. The splashes of the people in the boats leaping into the river sounded like thunderclaps in my ears. People were landing hastily on both sides of the river. But the Martian machine took no more notice for the moment of the people running this way and that than a man would of the confusion of ants in a nest against which his foot has kicked. When, half suffocated, I raised my head above water, the Martian's hood pointed at the batteries that were still firing across the river, and as it advanced it swung loose what must have been the generator of the Heat-Ray.</p>
+
+                    <blockquote class="blockquote-reverse">
+                        <p>
+                            <strong>Reverse Block Quote:</strong> Then, advancing obliquely towards us, came a fifth. Their armoured bodies glittered in the sun as they swept swiftly forward upon the guns, growing rapidly larger as they drew nearer. One on the extreme left, the remotest that is, flourished a huge case high in the air, and the ghostly, terrible Heat-Ray I had already seen on Friday night smote towards Chertsey, and struck the town.
+                        </p>
+                        <footer>H. G. Wells, <cite title="Source Title">The War of the Worlds</cite></footer>
+                    </blockquote>
+
+
+                    <p>In another moment it was on the bank, and in a stride wading halfway across. The knees of its foremost legs bent at the farther bank, and in another moment it had raised itself to its full height again, close to the village of Shepperton. Forthwith the six guns which, unknown to anyone on the right bank, had been hidden behind the outskirts of that village, fired simultaneously. The sudden near concussion, the last close upon the first, made my heart jump. The monster was already raising the case generating the Heat-Ray as the first shell burst six yards above the hood.</p>
+                </section>
+
+                <section class="template-styles__section container" id="jumbotron">
+                    <h2 class="template-styles__section__title">Jumbotron</h2>
+                    <div class="template-styles__section__body">
+                        <div class="jumbotron">
+                            <h1>Hello, world!</h1>
+                            <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                            <p><a href="#" class="btn btn-primary btn-lg" role="button">Learn more</a></p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="template-styles__section jumbotron" id="jumbo-full">
+                    <div class="container">
+                        <h1>Full Bleed Jumbotron!</h1>
+                        <p>This version fills the viewport</p>
+                        <p><a href="#" class="btn btn-primary btn-lg" role="button">Learn more</a></p>
+                    </div>
+                </section>
+
+                <section class="template-styles__section container" id="icons">
                     <h2 class="template-styles__section__title">Icons</h2>
                     <div class="template-styles__section__body">
                         <ul class="template-styles__icons">
@@ -291,25 +531,6 @@ code : ' focus'
                     </div>
                 </section>
 
-                <section class="template-styles__section container" id="jumbotron">
-                    <h2 class="template-styles__section__title">Jumbotron</h2>
-                    <div class="template-styles__section__body">
-                        <div class="jumbotron">
-                            <h1>Hello, world!</h1>
-                            <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-                            <p><a href="#" class="btn btn-primary btn-lg" role="button">Learn more</a></p>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="template-styles__section jumbotron" id="jumbo-full">
-                    <div class="container">
-                        <h1>Full Bleed Jumbotron!</h1>
-                        <p>This version fills the viewport</p>
-                        <p><a href="#" class="btn btn-primary btn-lg" role="button">Learn more</a></p>
-                    </div>
-                </section>
-
                 <section class="template-styles__section container" id="pagination">
                     <h2 class="template-styles__section__title">Pagination</h2>
                     <div class="template-styles__section__body">
@@ -416,109 +637,6 @@ code : ' focus'
                             </ol>
                         </div>
                     </div>
-                </section>
-
-                <section class="container template-styles__section" id="dropdowns">
-
-                    <h2 class="template-styles__section__title">Dropdowns</h2>
-
-                    <div class="template-styles__dropdown-group">
-                        {% for bt in button_types %}
-                            <div class="dropdown template-styles__dropdown">
-                                <button class="btn btn-{{ bt }} dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                    {{ bt }}
-                                    <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                    <li><a href="#">Action</a></li>
-                                    <li><a href="#">Another action</a></li>
-                                    <li><a href="#">Something else here</a></li>
-                                    <li role="separator" class="divider"></li>
-                                    <li><a href="#">Separated link</a></li>
-                                </ul>
-                            </div>
-                        {% endfor %}
-                    </div>
-
-                    <h3 class="template-styles__section__subtitle">Dropups</h3>
-
-                    <div class="template-styles__dropdown-group">
-                        {% for bt in button_types %}
-                            <div class="dropup template-styles__dropup">
-                                <button class="btn btn-{{ bt }} dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    {{  bt }}
-                                    <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                    <li><a href="#">Action</a></li>
-                                    <li><a href="#">Another action</a></li>
-                                    <li><a href="#">Something else here</a></li>
-                                    <li role="separator" class="divider"></li>
-                                    <li><a href="#">Separated link</a></li>
-                                </ul>
-                            </div>
-                        {% endfor %}
-                    </div>
-
-                    <h3 class="template-styles__section__subtitle">Button Dropdowns</h3>
-
-                    <div class="template-styles__dropdown-group">
-                        {% for bt in button_types %}
-                            <!-- Single button -->
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-{{ bt }} dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    {{ bt }} <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Action</a></li>
-                                    <li><a href="#">Another action</a></li>
-                                    <li><a href="#">Something else here</a></li>
-                                    <li role="separator" class="divider"></li>
-                                    <li><a href="#">Separated link</a></li>
-                                </ul>
-                            </div>
-                        {% endfor %}
-                    </div>
-
-                    <h3 class="template-styles__section__subtitle">Split Button Dropdowns</h3>
-
-                    <div class="template-styles__dropdown-group">
-                        {% for bt in button_types %}
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-{{ bt }}">{{ bt }}</button>
-                                <button type="button" class="btn btn-{{ bt }} dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="caret"></span>
-                                    <span class="sr-only">Toggle Dropdown</span>
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Action</a></li>
-                                    <li><a href="#">Another action</a></li>
-                                    <li><a href="#">Something else here</a></li>
-                                    <li role="separator" class="divider"></li>
-                                    <li><a href="#">Separated link</a></li>
-                                </ul>
-                            </div>
-                        {% endfor %}
-                    </div>
-
-                </section>
-
-                <section class="container template-styles__section" id="buttons">
-
-                    <h2 class="template-styles__section__title">Buttons</h2>
-
-                    {% for size in button_sizes %}
-
-                        {% if loop.first == false %}<h3
-                                class="template-styles__section__subtitle">{{ size.name }} Buttons</h3>{% endif %}
-                        <div>
-                            {% for bt in button_types %}
-                                <a href="#" class="btn btn{{ size.code }} btn-{{ bt }}">{{ bt }}</a>
-                            {% endfor %}
-                        </div>
-
-                    {% endfor %}
-
                 </section>
 
                 <section class="template-styles__section container" id="inputs">
@@ -887,56 +1005,6 @@ code : ' focus'
                     </div>
                 </section>
 
-                <section class="template-styles__section container" id="colors">
-                    {% set colors = {
-                    'green'            : 'Green',
-                    'blue'            : 'Blue',
-                    'blue-light'            : 'Light Blue',
-                    'red'            : 'Red',
-                    'orange'            : 'Orange',
-                    'black'            : 'Black',
-                    'gray-lighter'   : 'Lighter Gray',
-                    'gray-light'     : 'Light Gray',
-                    'gray'           : 'Gray',
-                    'gray-dark'      : 'Dark Gray',
-                    'gray-darker'    : 'Darker Gray',
-                    } %}
-
-                    {% set semantic_colors = {
-                    'brand-primary'   : 'Primary',
-                    'brand-success'   : 'Success',
-                    'brand-info'   : 'Info',
-                    'brand-warning'   : 'Warning',
-                    'brand-danger'   : 'Danger'
-                    } %}
-
-                    <h2 class="template-styles__section__title">Colors</h2>
-
-                    <div class="template-styles__section__body">
-
-                        {% for key, label in colors %}
-                            {% include "ClientWebsiteBundle:components:color_swatch.html.twig" with {
-                            'key' : key,
-                            'label' : label
-                            } %}
-                        {% endfor %}
-
-                    </div>
-
-                    <h3 class="template-styles__section__subtitle">Semantic Colors</h3>
-
-                    <div class="template-styles__section__body">
-
-                        {% for key, label in semantic_colors %}
-                            {% include "ClientWebsiteBundle:components:color_swatch.html.twig" with {
-                            'key' : key,
-                            'label' : label
-                            } %}
-                        {% endfor %}
-
-                    </div>
-                </section>
-
                 <section class="template-styles__section container" id="lists">
                     <h2 class="template-styles__section__title">Lists</h2>
                     <div class="template-styles__section__body">
@@ -1121,81 +1189,6 @@ function hello() {
                     </div>
                 </section>
 
-                <section class="template-styles__section container" id="paragraphs">
-                    <h2 class="template-styles__section__title">Paragraphs</h2>
-                    <div class="template-styles__section__body">
-                        <p>Then, <strong>advancing obliquely towards us</strong>, came a fifth. Their armoured bodies
-                            <em>glittered in the sun</em> as they swept <a href="#">swiftly forward</a> upon the guns,
-                            <mark>growing rapidly larger</mark> as they <del>drew nearer</del>. One on the
-                            <strike>extreme left</strike>, <small>the remotest that is</small>, <a href="#">flourished a
-                            <strong>huge case <em>high in</em></strong> the air, and the <em>ghostly</em>, terrible Heat-Ray</a> I had already seen on Friday night smote towards Chertsey, and struck the town.
-                        </p>
-
-                        <p>At sight of these strange, swift, and terrible creatures the crowd near the water's edge seemed to me to be for a moment horror-struck. There was no screaming or shouting, but a silence. Then a hoarse murmur and a movement of feet--a splashing from the water. A man, too frightened to drop the portmanteau he carried on his shoulder, swung round and sent me staggering with a blow from the corner of his burden. A woman thrust at me with her hand and rushed past me. I turned with the rush of the people, but I was not too terrified for thought. The terrible Heat-Ray was in my mind. To get under water! That was it!</p>
-
-                        <p>"Get under water!" I shouted, unheeded.</p>
-
-                        <p>I faced about again, and rushed towards the approaching Martian, rushed right down the gravelly beach and headlong into the water. Others did the same. A boatload of people putting back came leaping out as I rushed past. The stones under my feet were muddy and slippery, and the river was so low that I ran perhaps twenty feet scarcely waist-deep. Then, as the Martian towered overhead scarcely a couple of hundred yards away, I flung myself forward under the surface. The splashes of the people in the boats leaping into the river sounded like thunderclaps in my ears. People were landing hastily on both sides of the river. But the Martian machine took no more notice for the moment of the people running this way and that than a man would of the confusion of ants in a nest against which his foot has kicked. When, half suffocated, I raised my head above water, the Martian's hood pointed at the batteries that were still firing across the river, and as it advanced it swung loose what must have been the generator of the Heat-Ray.</p>
-                    </div>
-
-                    <h3 class="template-styles__section__subtitle">Lead Paragraph</h3>
-                    <p class="lead">Then,
-                        <strong>advancing obliquely towards us</strong>, came a fifth. Their armoured bodies
-                        <em>glittered in the sun</em> as they swept <a href="#">swiftly forward</a> upon the guns,
-                        <mark>growing rapidly larger</mark> as they <del>drew nearer</del>. One on the
-                        <strike>extreme left</strike>, <small>the remotest that is</small>, <a href="#">flourished a
-                        <strong>huge case <em>high in</em></strong> the air, and the
-                        <em>ghostly</em>, terrible Heat-Ray</a> I had already seen on Friday night smote towards Chertsey, and struck the town.
-                    </p>
-
-                    <p>At sight of these strange, swift, and terrible creatures the crowd near the water's edge seemed to me to be for a moment horror-struck. There was no screaming or shouting, but a silence. Then a hoarse murmur and a movement of feet--a splashing from the water. A man, too frightened to drop the portmanteau he carried on his shoulder, swung round and sent me staggering with a blow from the corner of his burden. A woman thrust at me with her hand and rushed past me. I turned with the rush of the people, but I was not too terrified for thought. The terrible Heat-Ray was in my mind. To get under water! That was it!</p>
-
-                    <p>"Get under water!" I shouted, unheeded.</p>
-
-                    <p>I faced about again, and rushed towards the approaching Martian, rushed right down the gravelly beach and headlong into the water. Others did the same. A boatload of people putting back came leaping out as I rushed past. The stones under my feet were muddy and slippery, and the river was so low that I ran perhaps twenty feet scarcely waist-deep. Then, as the Martian towered overhead scarcely a couple of hundred yards away, I flung myself forward under the surface. The splashes of the people in the boats leaping into the river sounded like thunderclaps in my ears. People were landing hastily on both sides of the river. But the Martian machine took no more notice for the moment of the people running this way and that than a man would of the confusion of ants in a nest against which his foot has kicked. When, half suffocated, I raised my head above water, the Martian's hood pointed at the batteries that were still firing across the river, and as it advanced it swung loose what must have been the generator of the Heat-Ray.</p>
-
-                    <h3 class="template-styles__section__subtitle">Block Quotes</h3>
-
-                    <p>At sight of these strange, swift, and terrible creatures the crowd near the water's edge seemed to me to be for a moment horror-struck. There was no screaming or shouting, but a silence. Then a hoarse murmur and a movement of feet--a splashing from the water. A man, too frightened to drop the portmanteau he carried on his shoulder, swung round and sent me staggering with a blow from the corner of his burden. A woman thrust at me with her hand and rushed past me. I turned with the rush of the people, but I was not too terrified for thought. The terrible Heat-Ray was in my mind. To get under water! That was it!</p>
-                    <blockquote>
-                        <p><strong>Block Quote:</strong> Then,
-                            <strong>advancing obliquely towards us</strong>, came a fifth. Their armoured bodies
-                            <em>glittered in the sun</em> as they swept <a href="#">swiftly forward</a> upon the guns,
-                            <mark>growing rapidly larger</mark> as they <del>drew nearer</del>. One on the
-                            <strike>extreme left</strike>, <small>the remotest that is</small>, <a href="#">flourished a
-                            <strong>huge case <em>high in</em></strong> the air, and the <em>ghostly</em>, terrible Heat-Ray</a> I had already seen on Friday night smote towards Chertsey, and struck the town.
-                        </p>
-                        <footer>H. G. Wells, <cite title="Source Title">The War of the Worlds</cite></footer>
-                    </blockquote>
-
-                    <p>I faced about again, and rushed towards the approaching Martian, rushed right down the gravelly beach and headlong into the water. Others did the same. A boatload of people putting back came leaping out as I rushed past. The stones under my feet were muddy and slippery, and the river was so low that I ran perhaps twenty feet scarcely waist-deep. Then, as the Martian towered overhead scarcely a couple of hundred yards away, I flung myself forward under the surface. The splashes of the people in the boats leaping into the river sounded like thunderclaps in my ears. People were landing hastily on both sides of the river. But the Martian machine took no more notice for the moment of the people running this way and that than a man would of the confusion of ants in a nest against which his foot has kicked. When, half suffocated, I raised my head above water, the Martian's hood pointed at the batteries that were still firing across the river, and as it advanced it swung loose what must have been the generator of the Heat-Ray.</p>
-
-                    <blockquote class="blockquote-reverse">
-                        <p>
-                            <strong>Reverse Block Quote:</strong> Then, advancing obliquely towards us, came a fifth. Their armoured bodies glittered in the sun as they swept swiftly forward upon the guns, growing rapidly larger as they drew nearer. One on the extreme left, the remotest that is, flourished a huge case high in the air, and the ghostly, terrible Heat-Ray I had already seen on Friday night smote towards Chertsey, and struck the town.
-                        </p>
-                        <footer>H. G. Wells, <cite title="Source Title">The War of the Worlds</cite></footer>
-                    </blockquote>
-
-
-                    <p>In another moment it was on the bank, and in a stride wading halfway across. The knees of its foremost legs bent at the farther bank, and in another moment it had raised itself to its full height again, close to the village of Shepperton. Forthwith the six guns which, unknown to anyone on the right bank, had been hidden behind the outskirts of that village, fired simultaneously. The sudden near concussion, the last close upon the first, made my heart jump. The monster was already raising the case generating the Heat-Ray as the first shell burst six yards above the hood.</p>
-                </section>
-
-                <section class="container template-styles__section" id="headings">
-
-                    {% set heading_types = ['h1','h2','h3','h4','h5','h6'] %}
-
-                    <h2 class="template-styles__section__title">Headings</h2>
-
-                    <div>
-                        {% for ht in heading_types %}
-                        <{{ ht }}>
-                        <strong><u>{{ ht }}</u> :</strong> The <strong>quick</strong> <em>brown</em> <a href="#">fox jumps</a> over the <small>lazy</small> dog
-                    </{{ ht }}>
-                    {% endfor %}
-            </div>
-
-                </section>
 
         </div>
     </div>

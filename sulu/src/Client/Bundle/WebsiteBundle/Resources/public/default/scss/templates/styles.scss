@@ -77,7 +77,33 @@
     }
   }
 
-  .btn {
+  &__icons {
+    list-style:none;
+    padding:0;
+    display:flex;
+    justify-content: space-between;
+    flex-wrap:wrap;
+  }
+
+  &__icon {
+    margin:0;
+    display:flex;
+    align-items:center;
+    margin-bottom:$site-gutter;
+    margin-right:$site-padding;
+    flex:0 0 150px;
+
+
+    > * + * {
+      margin-left:$site-spacing;
+    }
+
+    &__glyph {
+      font-size:2em;
+    }
+  }
+
+  .btn, .panel-heading {
     text-transform: capitalize;
   }
 }

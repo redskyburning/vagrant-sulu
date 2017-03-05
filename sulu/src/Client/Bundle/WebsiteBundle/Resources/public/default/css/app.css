@@ -8022,6 +8022,42 @@ button.close {
   margin-right: 15px;
 }
 
-.template-styles .btn {
+.template-styles__icons {
+  list-style: none;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.template-styles__icon {
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 30px;
+  margin-right: 15px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 150px;
+          flex: 0 0 150px;
+}
+
+.template-styles__icon > * + * {
+  margin-left: 7.5px;
+}
+
+.template-styles__icon__glyph {
+  font-size: 2em;
+}
+
+.template-styles .btn, .template-styles .panel-heading {
   text-transform: capitalize;
 }

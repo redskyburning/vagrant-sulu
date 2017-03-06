@@ -54,7 +54,7 @@
   }
 
   .color-swatch {
-    flex:0 0 200px;
+    flex:0 0 150px;
     margin-bottom: $site-gutter;
 
     @media screen and (max-width:$screen-xs-max) {
@@ -80,7 +80,7 @@
   @include color-swatch-variant('brand-warning',$brand-warning);
   @include color-swatch-variant('brand-danger',$brand-danger);
 
-  &__dropdown-group {
+  &__dropdown-group, &__button-group {
     display:flex;
     flex-wrap:wrap;
 
@@ -116,7 +116,7 @@
     }
   }
 
-  .btn, .panel-heading {
+  .panel-heading {
     text-transform: capitalize;
   }
 }

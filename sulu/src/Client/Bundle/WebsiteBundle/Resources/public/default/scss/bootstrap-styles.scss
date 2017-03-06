@@ -8,3 +8,41 @@
 .panel-footer {
   color:$black;
 }
+
+.btn {
+  font-family:$btn-font-family;
+  letter-spacing: $btn-letter-spacing;
+  text-transform: uppercase;
+}
+
+.jumbotron {
+  background:$black;
+  border-top:$site-border;
+  border-bottom:$site-border-fat;
+}
+
+.alert {
+  border:0;
+  border-top:$site-border;
+  border-bottom:$site-border-fat;
+
+  &-dismissable, &-dismissible {
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    padding:$site-padding;
+
+    .close {
+      display:block;
+      padding:$site-padding;
+      margin:$site-padding * -1;
+      margin-left:0;
+      position:static;
+      opacity:.9;
+      font-size:2em;
+      line-height:1em;
+      color:$white;
+      font-weight:200;
+    }
+  }
+}

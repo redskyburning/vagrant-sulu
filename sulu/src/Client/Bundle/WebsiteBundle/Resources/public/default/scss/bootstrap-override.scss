@@ -19,6 +19,35 @@ $page-header-border-color:$site-border-color;
 
 $grid-gutter-width:$site-gutter;
 
+$font-family-base:$source-sans-pro;
+
+$headings-font-family:$source-sans-pro;
+$heading-letter-spacing:.1em;
+$headings-font-weight:200;
+
+$btn-font-family:$source-sans-pro;
+$btn-letter-spacing:$heading-letter-spacing;
+
+$btn-default-bg:rgba(0,0,0,0);
+$btn-default-color:$white;
+
+$state-success-text:             $white;
+$state-success-bg:               $brand-success;
+$state-success-border:           $white;
+
+$state-info-text:                $white;
+$state-info-bg:                  $brand-info;
+$state-info-border:              $white;
+
+$state-warning-text:             $white;
+$state-warning-bg:               $brand-warning;
+$state-warning-border:           $white;
+
+$state-danger-text:              $white;
+$state-danger-bg:                $brand-danger;
+$state-danger-border:            $white;
+
+
 //== Container sizes
 //
 //## Define the maximum width of `.container` for different screen sizes.

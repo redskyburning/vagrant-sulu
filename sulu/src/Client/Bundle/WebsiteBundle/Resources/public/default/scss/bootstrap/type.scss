@@ -1,3 +1,14 @@
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  letter-spacing: $heading-letter-spacing;
+  text-transform: uppercase;
+}
+
+p {
+  line-height:1.8em;
+  letter-spacing:.05em;
+}
+
 .page-header {
-  border-bottom: 3px solid $page-header-border-color;
+  border-bottom: $site-border-fat;
 }

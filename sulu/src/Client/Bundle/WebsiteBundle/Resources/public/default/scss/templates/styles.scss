@@ -7,8 +7,14 @@
     }
   }
 
+  .page-header {
+    color:$white;
+  }
+
   &__section {
-    border:1px solid $gray-lighter;
+    background:rgba(25,25,25,0.8);
+    color:$white;
+    //border:1px solid $gray-lighter;
     padding:$site-gutter;
 
     &__title, &__subtitle {

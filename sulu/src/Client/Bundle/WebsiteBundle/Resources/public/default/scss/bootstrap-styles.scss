@@ -3,3 +3,8 @@
 // Files names should match the one being overridden (ie bootstrap/buttons.scss overrides _buttons.scss in bootstrap-sass.
 
 @import "bootstrap/grid";
+@import "bootstrap/type";
+
+.panel-footer {
+  color:$black;
+}

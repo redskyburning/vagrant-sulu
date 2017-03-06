@@ -60,8 +60,10 @@ code : ' focus'
 {% block content %}
     <div class="template-styles" id="content" vocab="http://schema.org/" typeof="Content">
 
-        <div class="template-styles__header page-header container">
-            <h1 class="template-styles__title">Style Guide</h1>
+        <div class="template-styles__header container">
+            <div class="page-header">
+                <h1 class="template-styles__title">Style Guide</h1>
+            </div>
         </div>
 
             <div class="template-styles__content">
@@ -72,25 +74,30 @@ code : ' focus'
 
                     <div class="template-styles__section__body">
 
-                        {% for key, label in colors %}
-                            {% include "ClientWebsiteBundle:components:color_swatch.html.twig" with {
-                            'key' : key,
-                            'label' : label
-                            } %}
-                        {% endfor %}
 
-                    </div>
+                        <div class="template-styles__color-swatches">
 
-                    <h3 class="template-styles__section__subtitle">Semantic Colors</h3>
+                            {% for key, label in colors %}
+                                {% include "ClientWebsiteBundle:components:color_swatch.html.twig" with {
+                                'key' : key,
+                                'label' : label
+                                } %}
+                            {% endfor %}
 
-                    <div class="template-styles__section__body">
+                        </div>
 
-                        {% for key, label in semantic_colors %}
-                            {% include "ClientWebsiteBundle:components:color_swatch.html.twig" with {
-                            'key' : key,
-                            'label' : label
-                            } %}
-                        {% endfor %}
+                        <h3 class="template-styles__section__subtitle">Semantic Colors</h3>
+
+                        <div class="template-styles__color-swatches">
+
+                            {% for key, label in semantic_colors %}
+                                {% include "ClientWebsiteBundle:components:color_swatch.html.twig" with {
+                                'key' : key,
+                                'label' : label
+                                } %}
+                            {% endfor %}
+
+                        </div>
 
                     </div>
                 </section>
@@ -99,17 +106,21 @@ code : ' focus'
 
                     <h2 class="template-styles__section__title">Buttons</h2>
 
-                    {% for size in button_sizes %}
+                    <div class="template-styles__section__body">
 
-                        {% if loop.first == false %}<h3
-                                class="template-styles__section__subtitle">{{ size.name }} Buttons</h3>{% endif %}
-                        <div>
-                            {% for bt in button_types %}
-                                <a href="#" class="btn btn{{ size.code }} btn-{{ bt }}">{{ bt }}</a>
-                            {% endfor %}
-                        </div>
+                        {% for size in button_sizes %}
 
-                    {% endfor %}
+                            {% if loop.first == false %}
+                                <h3 class="template-styles__section__subtitle">{{ size.name }} Buttons</h3>{% endif %}
+                            <div>
+                                {% for bt in button_types %}
+                                    <a href="#" class="btn btn{{ size.code }} btn-{{ bt }}">{{ bt }}</a>
+                                {% endfor %}
+                            </div>
+
+                        {% endfor %}
+
+                    </div>
 
                 </section>
 
@@ -117,83 +128,86 @@ code : ' focus'
 
                     <h2 class="template-styles__section__title">Dropdowns</h2>
 
-                    <div class="template-styles__dropdown-group">
-                        {% for bt in button_types %}
-                            <div class="dropdown template-styles__dropdown">
-                                <button class="btn btn-{{ bt }} dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                    {{ bt }}
-                                    <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                    <li><a href="#">Action</a></li>
-                                    <li><a href="#">Another action</a></li>
-                                    <li><a href="#">Something else here</a></li>
-                                    <li role="separator" class="divider"></li>
-                                    <li><a href="#">Separated link</a></li>
-                                </ul>
-                            </div>
-                        {% endfor %}
-                    </div>
+                    <div class="template-styles__section__body">
+                        <div class="template-styles__dropdown-group">
+                            {% for bt in button_types %}
+                                <div class="dropdown template-styles__dropdown">
+                                    <button class="btn btn-{{ bt }} dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                        {{ bt }}
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                        <li><a href="#">Action</a></li>
+                                        <li><a href="#">Another action</a></li>
+                                        <li><a href="#">Something else here</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">Separated link</a></li>
+                                    </ul>
+                                </div>
+                            {% endfor %}
+                        </div>
 
-                    <h3 class="template-styles__section__subtitle">Dropups</h3>
+                        <h3 class="template-styles__section__subtitle">Dropups</h3>
 
-                    <div class="template-styles__dropdown-group">
-                        {% for bt in button_types %}
-                            <div class="dropup template-styles__dropup">
-                                <button class="btn btn-{{ bt }} dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    {{  bt }}
-                                    <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                    <li><a href="#">Action</a></li>
-                                    <li><a href="#">Another action</a></li>
-                                    <li><a href="#">Something else here</a></li>
-                                    <li role="separator" class="divider"></li>
-                                    <li><a href="#">Separated link</a></li>
-                                </ul>
-                            </div>
-                        {% endfor %}
-                    </div>
+                        <div class="template-styles__dropdown-group">
+                            {% for bt in button_types %}
+                                <div class="dropup template-styles__dropup">
+                                    <button class="btn btn-{{ bt }} dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        {{  bt }}
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                        <li><a href="#">Action</a></li>
+                                        <li><a href="#">Another action</a></li>
+                                        <li><a href="#">Something else here</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">Separated link</a></li>
+                                    </ul>
+                                </div>
+                            {% endfor %}
+                        </div>
 
-                    <h3 class="template-styles__section__subtitle">Button Dropdowns</h3>
+                        <h3 class="template-styles__section__subtitle">Button Dropdowns</h3>
 
-                    <div class="template-styles__dropdown-group">
-                        {% for bt in button_types %}
-                            <!-- Single button -->
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-{{ bt }} dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    {{ bt }} <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Action</a></li>
-                                    <li><a href="#">Another action</a></li>
-                                    <li><a href="#">Something else here</a></li>
-                                    <li role="separator" class="divider"></li>
-                                    <li><a href="#">Separated link</a></li>
-                                </ul>
-                            </div>
-                        {% endfor %}
-                    </div>
+                        <div class="template-styles__dropdown-group">
+                            {% for bt in button_types %}
+                                <!-- Single button -->
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-{{ bt }} dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        {{ bt }} <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Action</a></li>
+                                        <li><a href="#">Another action</a></li>
+                                        <li><a href="#">Something else here</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">Separated link</a></li>
+                                    </ul>
+                                </div>
+                            {% endfor %}
+                        </div>
 
-                    <h3 class="template-styles__section__subtitle">Split Button Dropdowns</h3>
+                        <h3 class="template-styles__section__subtitle">Split Button Dropdowns</h3>
 
-                    <div class="template-styles__dropdown-group">
-                        {% for bt in button_types %}
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-{{ bt }}">{{ bt }}</button>
-                                <button type="button" class="btn btn-{{ bt }} dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="caret"></span>
-                                    <span class="sr-only">Toggle Dropdown</span>
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Action</a></li>
-                                    <li><a href="#">Another action</a></li>
-                                    <li><a href="#">Something else here</a></li>
-                                    <li role="separator" class="divider"></li>
-                                    <li><a href="#">Separated link</a></li>
-                                </ul>
-                            </div>
-                        {% endfor %}
+                        <div class="template-styles__dropdown-group">
+                            {% for bt in button_types %}
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-{{ bt }}">{{ bt }}</button>
+                                    <button type="button" class="btn btn-{{ bt }} dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span class="caret"></span>
+                                        <span class="sr-only">Toggle Dropdown</span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Action</a></li>
+                                        <li><a href="#">Another action</a></li>
+                                        <li><a href="#">Something else here</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">Separated link</a></li>
+                                    </ul>
+                                </div>
+                            {% endfor %}
+                        </div>
+
                     </div>
 
                 </section>
@@ -228,7 +242,6 @@ code : ' focus'
                         <p>"Get under water!" I shouted, unheeded.</p>
 
                         <p>I faced about again, and rushed towards the approaching Martian, rushed right down the gravelly beach and headlong into the water. Others did the same. A boatload of people putting back came leaping out as I rushed past. The stones under my feet were muddy and slippery, and the river was so low that I ran perhaps twenty feet scarcely waist-deep. Then, as the Martian towered overhead scarcely a couple of hundred yards away, I flung myself forward under the surface. The splashes of the people in the boats leaping into the river sounded like thunderclaps in my ears. People were landing hastily on both sides of the river. But the Martian machine took no more notice for the moment of the people running this way and that than a man would of the confusion of ants in a nest against which his foot has kicked. When, half suffocated, I raised my head above water, the Martian's hood pointed at the batteries that were still firing across the river, and as it advanced it swung loose what must have been the generator of the Heat-Ray.</p>
-                    </div>
 
                     <h3 class="template-styles__section__subtitle">Lead Paragraph</h3>
                     <p class="lead">Then,
@@ -271,6 +284,7 @@ code : ' focus'
 
 
                     <p>In another moment it was on the bank, and in a stride wading halfway across. The knees of its foremost legs bent at the farther bank, and in another moment it had raised itself to its full height again, close to the village of Shepperton. Forthwith the six guns which, unknown to anyone on the right bank, had been hidden behind the outskirts of that village, fired simultaneously. The sudden near concussion, the last close upon the first, made my heart jump. The monster was already raising the case generating the Heat-Ray as the first shell burst six yards above the hood.</p>
+                    </div>
                 </section>
 
                 <section class="template-styles__section container" id="jumbotron">
@@ -431,8 +445,6 @@ code : ' focus'
                                 </div>
                             </div>
                         </div>
-
-                        <h3 class="template-styles__section__subtitle">Block Quotes</h3>
                     </div>
                 </section>
 

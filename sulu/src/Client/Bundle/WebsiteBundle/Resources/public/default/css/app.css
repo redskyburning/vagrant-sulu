@@ -1379,8 +1379,8 @@ body {
   font-family: "Source Sans Pro", sans-serif;
   font-size: 14px;
   line-height: 1.428571429;
-  color: #333333;
-  background-color: #fff;
+  color: #fff;
+  background-color: #333;
 }
 
 input,
@@ -1428,7 +1428,7 @@ img {
 .img-thumbnail {
   padding: 4px;
   line-height: 1.428571429;
-  background-color: #fff;
+  background-color: #333;
   border: 1px solid #ddd;
   border-radius: 0px;
   -webkit-transition: all 0.2s ease-in-out;
@@ -2736,7 +2736,7 @@ th {
 }
 
 .table .table {
-  background-color: #fff;
+  background-color: #333;
 }
 
 .table-condensed > thead > tr > th,
@@ -3487,7 +3487,7 @@ select[multiple].input-lg,
   display: block;
   margin-top: 5px;
   margin-bottom: 10px;
-  color: #737373;
+  color: white;
 }
 
 @media (min-width: 768px) {
@@ -4653,7 +4653,7 @@ tbody.collapse.in {
 
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
   color: #555555;
-  background-color: #fff;
+  background-color: #333;
   border: 1px solid #ddd;
   border-bottom-color: transparent;
   cursor: default;
@@ -4736,7 +4736,7 @@ tbody.collapse.in {
   .nav-tabs-justified > .active > a, .nav-tabs.nav-justified > .active > a,
   .nav-tabs-justified > .active > a:hover, .nav-tabs.nav-justified > .active > a:hover,
   .nav-tabs-justified > .active > a:focus, .nav-tabs.nav-justified > .active > a:focus {
-    border-bottom-color: #fff;
+    border-bottom-color: #333;
   }
 }
 
@@ -5716,7 +5716,7 @@ a.badge:hover, a.badge:focus {
   padding: 4px;
   margin-bottom: 20px;
   line-height: 1.428571429;
-  background-color: #fff;
+  background-color: #333;
   border: 1px solid #ddd;
   border-radius: 0px;
   -webkit-transition: border 0.2s ease-in-out;
@@ -5734,7 +5734,7 @@ a.badge:hover, a.badge:focus {
 
 .thumbnail .caption {
   padding: 9px;
-  color: #333333;
+  color: #fff;
 }
 
 a.thumbnail:hover,
@@ -7810,8 +7810,6 @@ p {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("/bundles/clientwebsite/default/images/bg.png");
-  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("/bundles/clientwebsite/default/images/bg.png");
   background-attachment: fixed;
   background-position: left center;
   background-repeat: no-repeat;
@@ -7829,10 +7827,12 @@ p {
 }
 
 .site__footer {
-  background: #eeeeee;
+  background: #333;
   padding: 30px 0;
   margin-top: 30px;
-  border-top: 30px;
+  border-top: 1px solid #fff;
+  line-height: 1.8em;
+  letter-spacing: .05em;
 }
 
 .color-swatch {

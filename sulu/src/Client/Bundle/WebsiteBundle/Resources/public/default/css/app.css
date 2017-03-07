@@ -7987,6 +7987,7 @@ p {
 .template-styles__section__body {
   padding: 30px;
   background: rgba(25, 25, 25, 0.8);
+  border-bottom: 1px solid #fff;
 }
 
 .template-styles__section__title, .template-styles__section__subtitle {

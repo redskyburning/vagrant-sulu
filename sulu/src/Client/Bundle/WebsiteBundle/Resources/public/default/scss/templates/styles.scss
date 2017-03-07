@@ -17,6 +17,7 @@
     &__body {
       padding:$site-gutter;
       background:rgba(25,25,25,0.8);
+      border-bottom:$site-border;
     }
 
     &__title, &__subtitle {

@@ -5,10 +5,6 @@
 @import "bootstrap/grid";
 @import "bootstrap/type";
 
-.panel-footer {
-  color:$black;
-}
-
 .btn {
   font-family:$btn-font-family;
   letter-spacing: $btn-letter-spacing;
@@ -44,5 +40,22 @@
       color:$white;
       font-weight:200;
     }
+  }
+}
+
+.panel {
+  color:$panel-text-color;
+
+  &-heading {
+    letter-spacing: $heading-letter-spacing;
+    border-bottom:$site-border-fat;
+  }
+
+  &-body {
+    @include body-text-style();
+  }
+
+  &-footer {
+    @include body-text-style();
   }
 }

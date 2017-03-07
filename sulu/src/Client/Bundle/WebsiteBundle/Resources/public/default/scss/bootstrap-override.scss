@@ -32,19 +32,19 @@ $btn-default-bg:rgba(0,0,0,0);
 $btn-default-color:$white;
 
 $state-success-text:             $white;
-$state-success-bg:               $brand-success;
+$state-success-bg:               darken($brand-success,20%);
 $state-success-border:           $white;
 
 $state-info-text:                $white;
-$state-info-bg:                  $brand-info;
+$state-info-bg:                  darken($brand-info,20%);
 $state-info-border:              $white;
 
 $state-warning-text:             $white;
-$state-warning-bg:               $brand-warning;
+$state-warning-bg:               darken($brand-warning,15%);
 $state-warning-border:           $white;
 
 $state-danger-text:              $white;
-$state-danger-bg:                $brand-danger;
+$state-danger-bg:                darken($brand-danger,20%);
 $state-danger-border:            $white;
 
 
@@ -66,3 +66,34 @@ $container-md:                 $container-desktop;
 $container-large-desktop:      (640px + $grid-gutter-width);
 //** For `$screen-lg-min` and up.
 $container-lg:                 $container-large-desktop;
+
+$panel-bg:                    $black;
+$panel-text-color:                    $white;
+
+//** Border color for elements within panels
+$panel-inner-border:          $white;
+$panel-footer-bg:             $black;
+
+$panel-default-text:          $white;
+$panel-default-border:        $white;
+$panel-default-heading-bg:    $black;
+
+$panel-primary-text:          $white;
+$panel-primary-border:        $white;
+$panel-primary-heading-bg:    $brand-primary;
+
+$panel-success-text:          $state-success-text;
+$panel-success-border:        $state-success-border;
+$panel-success-heading-bg:    $state-success-bg;
+
+$panel-info-text:             $state-info-text;
+$panel-info-border:           $state-info-border;
+$panel-info-heading-bg:       $state-info-bg;
+
+$panel-warning-text:          $state-warning-text;
+$panel-warning-border:        $state-warning-border;
+$panel-warning-heading-bg:    $state-warning-bg;
+
+$panel-danger-text:           $state-danger-text;
+$panel-danger-border:         $state-danger-border;
+$panel-danger-heading-bg:     $state-danger-bg;

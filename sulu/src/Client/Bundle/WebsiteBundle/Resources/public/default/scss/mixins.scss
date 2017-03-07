@@ -13,3 +13,8 @@
     }
   }
 }
+
+@mixin body-text-style() {
+  line-height:1.8em;
+  letter-spacing:.05em;
+}

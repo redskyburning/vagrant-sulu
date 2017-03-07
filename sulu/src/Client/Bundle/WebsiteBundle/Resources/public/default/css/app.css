@@ -8190,3 +8190,11 @@ p {
 .template-styles .panel-heading {
   text-transform: capitalize;
 }
+
+.template-homepage__intro {
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("/bundles/clientwebsite/default/images/bg.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("/bundles/clientwebsite/default/images/bg.png");
+  background-position: left 25%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

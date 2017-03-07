@@ -59,3 +59,25 @@
     @include body-text-style();
   }
 }
+
+.pager {
+  li {
+    > a,
+    > span {
+      color:$pagination-color;
+    }
+  }
+}
+
+.breadcrumb {
+  border-top:$site-border;
+  border-bottom:$site-border;
+
+  a {
+    color:$breadcrumb-color;
+  }
+}
+
+.control-label, .form-control {
+  @include body-text-style();
+}

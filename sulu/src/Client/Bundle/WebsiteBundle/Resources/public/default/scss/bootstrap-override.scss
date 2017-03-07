@@ -97,3 +97,29 @@ $panel-warning-heading-bg:    $state-warning-bg;
 $panel-danger-text:           $state-danger-text;
 $panel-danger-border:         $state-danger-border;
 $panel-danger-heading-bg:     $state-danger-bg;
+
+$pagination-color:                     $white;
+$pagination-bg:                        $black;
+$pagination-border:                    $white;
+$pagination-disabled-color:            darken($white,25%);
+
+$pager-border-radius:0;
+
+$breadcrumb-bg:$black;
+$breadcrumb-color:$gray-light;
+$breadcrumb-active-color:$white;
+
+$input-bg:$black;
+$input-color:$white;
+$input-border:$white;
+$input-bg-disabled:$gray;
+
+$input-group-addon-bg:$black;
+
+$table-bg-accent:$gray-dark;
+$table-bg-active:$gray-dark;
+
+$list-group-bg:$black;
+
+$badge-bg:$white;
+$badge-color:$black;

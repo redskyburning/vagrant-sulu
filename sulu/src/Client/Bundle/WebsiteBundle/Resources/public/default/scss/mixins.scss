@@ -18,3 +18,8 @@
   line-height:1.8em;
   letter-spacing:.05em;
 }
+
+@mixin heading-text-style() {
+  letter-spacing: $heading-letter-spacing;
+  text-transform: uppercase;
+}

@@ -1,4 +1,3 @@
-// Placeholder
 $(document).ready(function() {
     var collapsedClass = 'is-collapsed';
 

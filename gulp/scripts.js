@@ -23,7 +23,6 @@ gulp.task('scripts:vendor', [], function () {
 	return gulp.src('./bower.json')
 		.pipe($.mainBowerFiles())
 		.pipe(jsFilter)
-		.pipe($.debug())
 		.pipe($.concat('vendor.js'))
 		.pipe(gulp.dest(conf.paths.scriptOutput));
 });

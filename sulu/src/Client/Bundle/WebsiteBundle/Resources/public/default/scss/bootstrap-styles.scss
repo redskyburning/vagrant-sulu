@@ -5,6 +5,16 @@
 @import "bootstrap/grid";
 @import "bootstrap/type";
 
+
+a {
+  font-weight:bold;
+
+  &:hover,
+  &:focus {
+    text-decoration:none;
+  }
+}
+
 .btn {
   font-family:$btn-font-family;
   letter-spacing: $btn-letter-spacing;
@@ -81,6 +91,7 @@
 .control-label, .form-control {
   @include body-text-style();
 }
+
 
 hr {
   margin:$site-gutter 0;

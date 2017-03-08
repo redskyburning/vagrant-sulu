@@ -2,11 +2,24 @@
   min-height:100vh;
   display:flex;
   flex-direction:column;
-  background-image:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),url('#{$image-path + 'bg.png'}');
-  background-attachment: fixed;
-  background-position:left center;
-  background-repeat:no-repeat;
-  background-size:cover;
+  position:relative;
+  //filter:blur(2rem);
+
+  &__background {
+    position:fixed;
+    left:0;
+    right:0;
+    top:0;
+    height:100vh;
+    z-index:-1;
+    background-image:linear-gradient($bg-overlay,$bg-overlay),
+      url('#{$image-path + 'bg.png'}');
+    background-attachment: fixed;
+    background-position:left center;
+    background-repeat:no-repeat;
+    background-size:cover;
+    filter:blur(.3rem);
+  }
 
   &__navbar {
     margin-bottom:0;

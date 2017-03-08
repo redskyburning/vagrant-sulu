@@ -7834,12 +7834,24 @@ hr {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("/bundles/clientwebsite/default/images/bg.png");
-  background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("/bundles/clientwebsite/default/images/bg.png");
+  position: relative;
+}
+
+.site__background {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  z-index: -1;
+  background-image: -webkit-linear-gradient(rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)), url("/bundles/clientwebsite/default/images/bg.png");
+  background-image: linear-gradient(rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)), url("/bundles/clientwebsite/default/images/bg.png");
   background-attachment: fixed;
   background-position: left center;
   background-repeat: no-repeat;
   background-size: cover;
+  -webkit-filter: blur(0.3rem);
+          filter: blur(0.3rem);
 }
 
 .site__navbar {
@@ -8246,8 +8258,6 @@ hr {
 }
 
 .template-homepage__intro {
-  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("/bundles/clientwebsite/default/images/bg.png");
-  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("/bundles/clientwebsite/default/images/bg.png");
   background-position: left 25%;
   background-repeat: no-repeat;
   background-size: cover;

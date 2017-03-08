@@ -22,62 +22,7 @@
 
 </head>
 <body class="site">
-    {#<nav class="site__navbar navbar navbar-inverse">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/">Vagrant-Sulu</a>
-            </div>
-
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                       aria-expanded="false">Language <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        {% for locale, url in urls %}
-                            <li>
-                                <a href="{{ sulu_content_path((url?:'/'),request.webspaceKey,locale) }}">{{ locale }}</a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </li>
-                {% if sulu_navigation_root_tree('main') %}
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                       aria-expanded="false">Navigation <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        {% for item in sulu_navigation_root_tree('main') %}
-                            <li>
-                                <a href="{{ sulu_content_path(item.url) }}" title="{{ item.title }}">{{ item.title }}</a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </li>
-                {% endif %}
-            </ul>
-
-            <form class="navbar-form navbar-right" action="{{ path('sulu_search.website_search') }}" method="GET">
-                <div class="form-group">
-                    <label class="sr-only" for="exampleInputAmount">Search</label>
-                    <div class="input-group">
-                        <input name="q" type="text" class="form-control" placeholder="Search">
-                        <span class="input-group-btn">
-                                <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-                              </span>
-                    </div>
-                </div>
-            </form>
-            </div>
-        </div><!-- /.navbar-collapse -->
-    </nav>#}
+    <div class="site__background"></div>
 
     {% include 'ClientWebsiteBundle:views:navigation.html.twig' %}
     <!-- /header -->

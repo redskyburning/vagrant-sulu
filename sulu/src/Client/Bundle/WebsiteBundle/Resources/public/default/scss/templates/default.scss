@@ -16,7 +16,7 @@
   }
 
   &__content {
-    background:$black;
-    padding:$site-gutter $site-gutter $site-gutter * 2;
+    background:rgba(27, 31, 34, 0.85);
+    padding:$site-gutter;
   }
 }

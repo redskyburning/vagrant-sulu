@@ -92,6 +92,11 @@ a {
   @include body-text-style();
 }
 
+.form-group {
+  &.form-footer {
+    margin-top:$site-gutter;
+  }
+}
 
 hr {
   margin:$site-gutter 0;

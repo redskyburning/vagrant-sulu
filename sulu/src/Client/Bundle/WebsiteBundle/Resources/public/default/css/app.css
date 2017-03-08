@@ -7817,6 +7817,10 @@ a:hover, a:focus {
   letter-spacing: .05em;
 }
 
+.form-group.form-footer {
+  margin-top: 30px;
+}
+
 hr {
   margin: 30px 0;
 }
@@ -7942,6 +7946,32 @@ hr {
   display: none;
 }
 
+.circle-icon {
+  border-radius: 100%;
+  box-shadow: inset 0 0 0 1px #fff;
+  height: 3rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.circle-icon__label {
+  display: none;
+}
+
+.circle-icon + .circle-icon {
+  margin-left: 7.5px;
+}
+
 .template-default__header-image {
   padding-left: 0;
   padding-right: 0;
@@ -7958,8 +7988,8 @@ hr {
 }
 
 .template-default__content {
-  background: #333;
-  padding: 30px 30px 60px;
+  background: rgba(27, 31, 34, 0.85);
+  padding: 30px;
 }
 
 .template-event__header {

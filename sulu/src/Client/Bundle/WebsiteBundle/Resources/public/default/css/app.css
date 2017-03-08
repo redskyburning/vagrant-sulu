@@ -7810,6 +7810,8 @@ p {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("/bundles/clientwebsite/default/images/bg.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("/bundles/clientwebsite/default/images/bg.png");
   background-attachment: fixed;
   background-position: left center;
   background-repeat: no-repeat;
@@ -7877,12 +7879,11 @@ p {
   font-size: 20px;
 }
 
-.template-default__header {
+.template-default__image-header {
   min-height: 35vw;
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
-  color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -7893,7 +7894,6 @@ p {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  text-transform: capitalize;
 }
 
 .template-event__header {

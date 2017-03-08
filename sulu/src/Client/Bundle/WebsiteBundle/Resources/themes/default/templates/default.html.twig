@@ -4,24 +4,20 @@
 
 {% block content %}
     <div class="template-default">
-        {% if content.headerimage|length > 0 and content.headerimage[0].thumbnails['1200x675'] %}
 
-            <div class="template-default__image-header jumbotron"
-                 style="background-image:url('{{ content.headerimage[0].thumbnails['1200x675'] }}')">
-                <div class="container">
-                    <h1 property="title">{{ content.title }}</h1>
-                </div>
-            </div>
-
-        {% else %}
-
-            <div class="template-default__text-header container page-header">
-                <h1 property="title">{{ content.title }}</h1>
-            </div>
-
-        {% endif %}
+        <div class="template-default__header container page-header">
+            <h1 property="title">{{ content.title }}</h1>
+        </div>
 
         <div class="template-default__content container">
+            {% if content.headerimage|length > 0 and content.headerimage[0].thumbnails['1200x675'] %}
+
+                <div class="template-default__header-image">
+                    <img src="{{ content.headerimage[0].thumbnails['1200x675'] }}" />
+                </div>
+
+            {% endif %}
+
             {% autoescape false %}
                 <div property="article">{{ content.article }}</div>
             {% endautoescape %}

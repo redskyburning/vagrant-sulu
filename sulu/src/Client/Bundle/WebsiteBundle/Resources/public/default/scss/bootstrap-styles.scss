@@ -81,3 +81,11 @@
 .control-label, .form-control {
   @include body-text-style();
 }
+
+hr {
+  margin:$site-gutter 0;
+}
+
+.image-responsive {
+  width:100%;
+}

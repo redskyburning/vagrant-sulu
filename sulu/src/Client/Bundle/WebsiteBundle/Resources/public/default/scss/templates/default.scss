@@ -1,15 +1,22 @@
 .template-default {
-  &__image-header, &__text-header {
 
+  &__header-image {
+    padding-left:0;
+    padding-right:0;
+    margin-bottom:$site-gutter;
+
+    img {
+      width:100%;
+      height:auto;
+    }
   }
 
-  &__image-header {
-    min-height:35vw;
-    background-repeat: no-repeat;
-    background-position:center top;
-    background-size:cover;
-    display:flex;
-    flex-direction:column;
-    justify-content: flex-end;
+  &__header {
+    margin-bottom:0;
+  }
+
+  &__content {
+    background:$black;
+    padding:$site-gutter $site-gutter $site-gutter * 2;
   }
 }
